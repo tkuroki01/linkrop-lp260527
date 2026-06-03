@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M&A、聞くだけでもいいですか。| Linkrop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1814;
+    --ink-mid: #3d3a34;
+    --ink-light: #6b6760;
+    --ink-faint: #a09c96;
+    --paper: #faf8f4;
+    --paper-warm: #f3efe8;
+    --paper-card: #ffffff;
+    --accent: #1e3a5f;
+    --accent-light: #e8edf4;
+    --accent-mid: #2d5280;
+    --accent-orange: #c4571a;
+    --rule: #e0dbd2;
+    --rule-strong: #c8c2b8;
+    --serif: 'Noto Serif JP', serif;
+    --sans: 'Noto Sans JP', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(30,58,95,0.97);
+    padding: 14px 48px;
+    display: flex; align-items: center; justify-content: space-between;
+    backdrop-filter: blur(8px);
+  }
+  .logo-wrap { display: flex; flex-direction: column; }
+  .logo { font-family: var(--serif); font-size: 20px; font-weight: 700; color: #fff; letter-spacing: .06em; }
+  .logo-sub { font-size: 10px; color: rgba(255,255,255,.55); letter-spacing: .12em; margin-top: 2px; }
+  .nav-cta {
+    background: var(--accent-orange); color: #fff; border: none;
+    padding: 10px 24px; border-radius: 4px; font-family: var(--sans);
+    font-size: 13px; font-weight: 700; cursor: pointer; letter-spacing: .04em;
+    text-decoration: none; display: inline-block;
+  }
+  .nav-cta:hover { background: #b04a14; }
+
+  /* HERO */
+  .hero {
+    min-height: 86vh; display: flex; align-items: center; justify-content: center;
+    padding: 100px 6% 80px;
+    position: relative; overflow: hidden;
+    background: linear-gradient(150deg, #f5f2ec 0%, #edeae2 100%);
+  }
+  .hero-accent-bar {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 5px; background: var(--accent);
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 760px; width: 100%; }
+  .hero-inner { max-width: 1000px; width: 100%; margin: 0 auto; position: relative; z-index: 2; }
+    font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 28px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--accent); opacity: .6; }
+  .hero-headline {
+    font-family: var(--serif); font-size: clamp(26px, 3.8vw, 44px);
+    font-weight: 700; line-height: 1.5; color: var(--ink);
+    margin-bottom: 22px; letter-spacing: .01em;
+  }
+  .hero-headline em { font-style: normal; color: var(--accent); }
+  .hero-sub {
+    font-size: 16px; color: var(--ink-mid); line-height: 1.95;
+    margin-bottom: 36px; max-width: 540px;
+  }
+  .hero-cta-group { display: flex; flex-direction: column; gap: 10px; max-width: 340px; }
+  .btn-primary {
+    background: var(--accent-orange); color: #fff; border: none;
+    padding: 17px 28px; border-radius: 4px; font-family: var(--sans);
+    font-size: 15px; font-weight: 700; cursor: pointer; letter-spacing: .04em;
+    text-align: center; text-decoration: none; display: block;
+  }
+  .btn-primary:hover { background: #b04a14; }
+  .hero-note { font-size: 12px; color: var(--ink-faint); text-align: center; letter-spacing: .04em; }
+
+  /* SECTIONS */
+  section { padding: 80px 6%; max-width: 1000px; margin: 0 auto; }
+  .section-label {
+    font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::before { content: ''; width: 24px; height: 1px; background: var(--accent); }
+  h2 { font-family: var(--serif); font-size: clamp(22px, 3vw, 30px); font-weight: 700; line-height: 1.55; color: var(--ink); margin-bottom: 24px; }
+  h3 { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 12px; }
+  p { color: var(--ink-mid); margin-bottom: 16px; }
+
+  .divider { border: none; border-top: 1px solid var(--rule); max-width: 1000px; margin: 0 auto; }
+
+  /* ARUARU */
+  .aruaru-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
+  .aruaru-item {
+    background: var(--paper-card); border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent); border-radius: 4px;
+    padding: 14px 18px; font-size: 14px; color: var(--ink-mid); line-height: 1.7;
+  }
+
+  /* MEDIATION */
+  .mediation-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+  .mediation-col {
+    background: var(--paper-card); border: 1px solid var(--rule);
+    border-radius: 6px; padding: 24px 22px;
+  }
+  .mediation-col-header {
+    font-size: 12px; font-weight: 700; letter-spacing: .1em;
+    padding: 5px 12px; border-radius: 3px; display: inline-block;
+    margin-bottom: 14px;
+  }
+  .col-positive .mediation-col-header { background: var(--accent-light); color: var(--accent); }
+  .col-note .mediation-col-header { background: #fdf0e8; color: var(--accent-orange); }
+  .mediation-col h4 { font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+  .mediation-col p { font-size: 13.5px; color: var(--ink-mid); line-height: 1.85; margin: 0; }
+  .mediation-bridge {
+    margin-top: 20px; padding: 18px 22px;
+    background: #f7f4ef; border-radius: 6px; border-left: 3px solid var(--accent-orange);
+    font-size: 14px; color: var(--ink-mid); line-height: 1.8;
+  }
+
+  /* CAN DO LIST */
+  .can-list { list-style: none; margin: 24px 0; }
+  .can-list li {
+    padding: 16px 0; border-bottom: 1px solid var(--rule);
+    display: flex; gap: 16px; align-items: flex-start;
+    font-size: 14px; color: var(--ink-mid);
+  }
+  .can-list li:last-child { border-bottom: none; }
+  .can-icon {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: var(--accent-light); color: var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  }
+  .can-icon-first {
+    background: var(--accent); color: #fff;
+  }
+  .can-list li strong { color: var(--ink); display: block; margin-bottom: 4px; }
+
+  /* FEATURES */
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+  .feature-card {
+    background: var(--paper-card); border: 1px solid var(--rule);
+    border-radius: 6px; padding: 22px 20px;
+  }
+  .feature-card h4 { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+  .feature-card p { font-size: 13px; color: var(--ink-light); line-height: 1.8; margin: 0; }
+
+  /* PROFILE */
+  .profile-block {
+    display: flex; gap: 40px; align-items: flex-start;
+    background: var(--paper-card); border: 1px solid var(--rule);
+    border-radius: 8px; padding: 40px; margin-top: 28px;
+  }
+  .profile-img-wrap { flex-shrink: 0; text-align: center; }
+  .profile-img {
+    width: 120px; height: 120px; border-radius: 50%;
+    object-fit: cover; object-position: center top;
+    border: 3px solid var(--accent-light);
+    display: block;
+  }
+  .profile-tag {
+    background: var(--accent-orange); color: #fff;
+    font-size: 10px; font-weight: 700; letter-spacing: .06em;
+    padding: 4px 10px; border-radius: 3px; margin-top: 10px;
+    display: inline-block; white-space: nowrap;
+  }
+  .profile-body h3 { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-bottom: 2px; }
+  .profile-kana { font-size: 12px; color: var(--ink-faint); letter-spacing: .1em; margin-bottom: 6px; }
+  .profile-title { font-size: 12px; color: var(--accent); font-weight: 700; letter-spacing: .06em; margin-bottom: 20px; line-height: 1.7; }
+  .profile-facts { list-style: none; margin-bottom: 16px; }
+  .profile-facts li {
+    padding: 10px 0; border-bottom: 1px solid var(--rule);
+    display: flex; gap: 12px; align-items: flex-start; font-size: 13.5px;
+  }
+  .profile-facts li:last-child { border-bottom: none; }
+  .fact-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
+  .fact-title { font-weight: 700; color: var(--ink); }
+  .fact-body { color: var(--ink-mid); font-size: 13px; margin-top: 3px; line-height: 1.75; }
+  .profile-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .badge {
+    background: var(--paper-warm); color: var(--ink-mid);
+    font-size: 11px; padding: 5px 12px; border-radius: 3px;
+    border: 1px solid var(--rule-strong);
+  }
+
+  /* FAQ */
+  .faq-list { margin-top: 24px; }
+  details { border-bottom: 1px solid var(--rule); padding: 20px 0; }
+  details:first-child { border-top: 1px solid var(--rule); }
+  summary {
+    font-size: 15px; font-weight: 500; color: var(--ink);
+    cursor: pointer; list-style: none;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; color: var(--accent); font-size: 20px; font-weight: 400; flex-shrink: 0; transition: transform .2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  .faq-answer { font-size: 14px; color: var(--ink-mid); line-height: 1.85; padding-top: 16px; padding-right: 32px; }
+
+  /* CTA FINAL */
+  .cta-final {
+    background: var(--accent); border-radius: 8px;
+    padding: 64px 48px; text-align: center;
+    max-width: 1000px; margin: 80px auto;
+  }
+  .cta-final h2 { font-family: var(--serif); font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 14px; }
+  .cta-final p { color: rgba(255,255,255,.8); font-size: 15px; margin-bottom: 32px; }
+  .btn-orange {
+    background: var(--accent-orange); color: #fff; border: none;
+    padding: 17px 40px; border-radius: 4px; font-family: var(--sans);
+    font-size: 15px; font-weight: 700; cursor: pointer; letter-spacing: .04em;
+    display: inline-block; text-decoration: none;
+  }
+  .btn-orange:hover { background: #b04a14; }
+  .cta-note { margin-top: 16px; font-size: 12px; color: rgba(255,255,255,.55); }
+
+  footer { border-top: 1px solid var(--rule); padding: 32px 40px; text-align: center; font-size: 12px; color: var(--ink-faint); }
+
+  @media (max-width: 640px) {
+    nav { padding: 12px 20px; }
+    .hero { padding: 80px 24px 60px; }
+    section { padding: 60px 24px; }
+    .aruaru-grid, .mediation-cols, .features-grid { grid-template-columns: 1fr; }
+    .profile-block { flex-direction: column; gap: 20px; padding: 24px; }
+    .cta-final { margin: 60px 20px; padding: 48px 24px; }
+  }</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo-wrap">
+    <span class="logo">Linkrop</span>
+    <span class="logo-sub">社長の将来設計パートナー</span>
+  </div>
+  <a href="https://linkrop.jp/freedom-lab/contact-2" class="nav-cta">無料相談を申し込む</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-accent-bar"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">M&A、聞くだけでもいいですか</div>
+      <h1 class="hero-headline">
+        相談したら、話が進んでいきそうで。<br>
+        それでも、<em>誰かに聞いてみたかった。</em>
+      </h1>
+      <p class="hero-sub">
+        ここでは、何も決めなくていいです。<br>
+        「気になっている」だけで、来ていい場所です。<br>
+        売る・売らない、どちらにも偏らない第三者が、ここにいます。
+      </p>
+      <div class="hero-cta-group">
+        <a href="https://linkrop.jp/freedom-lab/contact-2" class="btn-primary">まず話を聞く（無料・秘密厳守）</a>
+        <span class="hero-note">仲介を前提としない相談も大歓迎です</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- あるある共感 -->
+<section>
+  <div class="section-label">こんな気持ち、ありませんか？</div>
+  <h2>「興味はある。でも、<br>相談したら進んでしまいそうで。」</h2>
+  <p>M&Aに関心があっても、「相談＝決断の始まり」に感じてしまい、動けずにいる社長が多くいます。仲介から声がかかった人も、まだ誰にも話していない人も——「聞いてみたい」という気持ちがあるなら、それだけで十分です。</p>
+  <div class="aruaru-grid">
+    <div class="aruaru-item">相談したら、その日から話が進んでいきそうで怖い</div>
+    <div class="aruaru-item">売りたいわけじゃないけど、自社の価値は気になっている</div>
+    <div class="aruaru-item">突然DMや電話でアプローチが来て、どう対応すれば…</div>
+    <div class="aruaru-item">M&Aって、うちみたいな会社でもできるの？</div>
+    <div class="aruaru-item">話は聞いてみたいが、相手の言いなりになりたくない</div>
+    <div class="aruaru-item">相談したことが、社員や取引先に知られたくない</div>
+    <div class="aruaru-item">「この書類にハンコを押して大丈夫？」と不安になった</div>
+    <div class="aruaru-item">M&Aが本当にベストな選択肢なのか、判断がつかない</div>
+    <div class="aruaru-item" style="grid-column:1/-1;">誰に相談すればいいか、わからない。でも、誰かに聞いてみたい。</div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- M&A仲介の構造 -->
+<section>
+  <div class="section-label">知っておいてほしいこと</div>
+  <h2>M&A専業会社は、使い方次第。</h2>
+  <p>M&A仲介会社の特徴を知った上で付き合うことが、あなたの利益を守ることにつながります。</p>
+  <div class="mediation-cols">
+    <div class="mediation-col col-positive">
+      <span class="mediation-col-header">強みを活かせる場面</span>
+      <h4>売る方針が固まったとき、M&A専業会社は頼もしい</h4>
+      <p>売却の意向が明確になり、譲れない条件・できれば叶えたい条件が整理できた段階で、良い担当者と出会えれば、M&A専業会社は非常に強力なパートナーです。買い手候補のネットワーク・交渉力・手続き管理など、専門家として力を発揮します。</p>
+    </div>
+    <div class="mediation-col col-note">
+      <span class="mediation-col-header">知っておくべきこと</span>
+      <h4>成約が目的のビジネスモデルである、という事実</h4>
+      <p>多くのM&A仲介会社は、売買が成立したときに報酬が発生します。これ自体は珍しくありませんが、構造上「成約させること」がゴールになりやすい面があります。「もう少し時間をかけたい」「条件をもっと詰めたい」という思いよりも、スケジュールが優先されることもあります。</p>
+    </div>
+  </div>
+  <div class="mediation-bridge">
+    <strong style="color:var(--ink);">だからこそ、「使う前の準備」が大事です。</strong><br>
+    自分の意向・条件・優先順位を整理してから臨むことで、仲介会社との関係が対等になります。その準備を一緒にするのが、Linkropの役割のひとつです。
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- できること -->
+<section>
+  <div class="section-label">具体的にできること</div>
+  <h2>「何でも聞いてください」では<br>なく、具体的にお手伝いします。</h2>
+  <p>専門的な経験をわかりやすく翻訳して、一緒に考えます。難しい言葉を使わず、社長の立場で整理します。</p>
+  <ul class="can-list">
+    <li>
+      <span class="can-icon can-icon-first">0</span>
+      <div>
+        <strong>会社の状況と、経営者の思いを伺います</strong>
+        会社の理想と現状、後継者や従業員への思い、経営者ご自身の今後——まずここをじっくり聞かせてください。何を大切にしているかが整理されると、M&Aを含むあらゆる判断の軸が見えてきます。
+      </div>
+    </li>
+    <li>
+      <span class="can-icon">1</span>
+      <div>
+        <strong>会社の適正価値の整理</strong>
+        相手の提示額が妥当かどうか、自社の価値をどう見るべきか、一緒に整理します。
+      </div>
+    </li>
+    <li>
+      <span class="can-icon">2</span>
+      <div>
+        <strong>提案内容のセカンドオピニオン</strong>
+        仲介会社から届いた資料や条件を、第三者の目線で読み解きます。「この条項は何を意味するか」もご説明します。
+      </div>
+    </li>
+    <li>
+      <span class="can-icon">3</span>
+      <div>
+        <strong>契約書のビジネス面の確認</strong>
+        法律判断は弁護士が担いますが、「この条件が事業にどう影響するか」というビジネス面の確認をご一緒します。
+      </div>
+    </li>
+    <li>
+      <span class="can-icon">4</span>
+      <div>
+        <strong>交渉の進め方・タイミングのアドバイス</strong>
+        いつ、何を、どう伝えるか。売り手として有利に動くための段取りをサポートします。
+      </div>
+    </li>
+    <li>
+      <span class="can-icon">5</span>
+      <div>
+        <strong>M&A以外の選択肢も含めた整理</strong>
+        事業承継、MBO、資本業務提携、縮小・集中など、M&A以外の道も含めて、本当にベストな選択を一緒に考えます。
+      </div>
+    </li>
+    <li>
+      <span class="can-icon">6</span>
+      <div>
+        <strong>売却後の影響の整理</strong>
+        従業員・取引先・社長自身への影響を事前に整理します。「進んでから後悔した」を防ぐために。
+      </div>
+    </li>
+  </ul>
+</section>
+
+<hr class="divider">
+
+<!-- Linkropの特徴 -->
+<section>
+  <div class="section-label">Linkropの特徴</div>
+  <h2>「相談しやすい」を<br>大切にしています。</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <h4>仲介を前提としない相談OK</h4>
+      <p>最終的にM&Aに進まなくても、他社で仲介をお願いすることになっても構いません。まず「正しく理解すること」を最優先します。</p>
+    </div>
+    <div class="feature-card">
+      <h4>M&A以外の選択肢も一緒に</h4>
+      <p>M&Aが最善かどうか、相談の中で一緒に考えます。選択肢を広げることが、納得できる決断への近道です。</p>
+    </div>
+    <div class="feature-card">
+      <h4>専門家との協働に慣れています</h4>
+      <p>弁護士・税理士・会計士など各専門家との連携がスムーズ。「誰に何を相談すべきか」の整理もお手伝いします。</p>
+    </div>
+    <div class="feature-card">
+      <h4>プロの経験をわかりやすく</h4>
+      <p>金融25年の経験と、自ら事業譲渡を経験したリアルな視点から、難しいことを社長の言葉に翻訳してお伝えします。</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- プロフィール -->
+<section>
+  <div class="section-label">なぜLinkropか</div>
+  <h2>「売る側」も「金融の側」も、<br>両方わかる唯一の立場。</h2>
+  <div class="profile-block">
+    <div class="profile-img-wrap">
+      <img src="images_kuroki.jpg" alt="黒木 武将" class="profile-img">
+      <span class="profile-tag">社長の将来設計パートナー</span>
+    </div>
+    <div class="profile-body">
+      <h3>黒木 武将</h3>
+      <p class="profile-kana">くろき たけゆき</p>
+      <p class="profile-title">
+        株式会社 Linkrop 代表取締役<br>
+        事業承継・M&Aアドバイザー ／ 社外CFO
+      </p>
+      <ul class="profile-facts">
+        <li>
+          <span class="fact-dot"></span>
+          <div>
+            <span class="fact-title">金融実務 25年</span>
+            <p class="fact-body">みずほ銀行・メリルリンチ日本証券でM&A・資金調達・事業再編を多数担当。売り手・買い手・銀行、すべての視点を持つ。</p>
+          </div>
+        </li>
+        <li>
+          <span class="fact-dot"></span>
+          <div>
+            <span class="fact-title">経営当事者 13年</span>
+            <p class="fact-body">2013年に住宅・リノベーション領域でSUVACOを起業。資金調達・提携・組織運営・金融機関対応を全て経営者として直接経験。社長の孤独を知っている。</p>
+          </div>
+        </li>
+        <li>
+          <span class="fact-dot"></span>
+          <div>
+            <span class="fact-title">自ら事業譲渡を経験</span>
+            <p class="fact-body">アドバイザーとしてだけでなく、事業譲渡を当事者として経験。売り手の本音・交渉の裏側・M&A仲介会社がどう動くかを、実体験として知っている。</p>
+          </div>
+        </li>
+      </ul>
+      <div class="profile-badges">
+        <span class="badge">シカゴ大学MBA</span>
+        <span class="badge">M&A支援機関登録（中小企業庁）</span>
+        <span class="badge">FP2級（AFP）</span>
+        <span class="badge">宅地建物取引士</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FAQ -->
+<section>
+  <div class="section-label">よくある質問</div>
+  <h2>「聞いてもいいのかな」と<br>思ったことも、聞いてください。</h2>
+  <div class="faq-list">
+    <details>
+      <summary>まだ方針を何も決めていないのですが、相談できますか？</summary>
+      <div class="faq-answer">もちろんです。むしろ、何も決まっていない段階での相談を歓迎します。「話を聞いてみたい」「何が正しいかわからない」という状態から一緒に整理することが、Linkropの得意とするところです。</div>
+    </details>
+    <details>
+      <summary>すでに他の仲介会社・アドバイザリー会社と話し始めていますが、相談できますか？</summary>
+      <div class="faq-answer">はい、相談いただけます。契約状況によって動ける範囲は異なりますが、「今の提案をどう読むか」「このまま進めていいか」といったセカンドオピニオンとしてお役に立てることがあります。まずご状況をお聞かせください。</div>
+    </details>
+    <details>
+      <summary>Linkropは仲介・M&Aアドバイザリーも手掛けているそうですが、相談するとM&Aに進む前提になりますか？</summary>
+      <div class="faq-answer">なりません。相談の結果、M&Aに進まないという結論になることも十分あり得ます。また、M&Aに進む場合でも、Linkropに仲介を依頼する前提ではありません。他の仲介会社やアドバイザーをご選択いただいても構いません。社長にとってベストな結果を優先します。</div>
+    </details>
+    <details>
+      <summary>一般的なM&A仲介・アドバイザリーとの違いは何ですか？</summary>
+      <div class="faq-answer">多くの仲介会社は、売買成立を前提にサービスを設計しています。Linkropは「相談相手」としての役割を大切にしており、M&Aに進まない選択肢も含めて中立な立場でアドバイスします。また、売り手として実際に事業譲渡を経験した視点から、当事者目線のサポートができる点が特徴です。</div>
+    </details>
+    <details>
+      <summary>費用はどのくらいかかりますか？</summary>
+      <div class="faq-answer">初回相談は無料です。継続的なサポートが必要な場合は、内容・期間によって個別にご相談します。まずは話を聞くだけでも大丈夫です。</div>
+    </details>
+    <details>
+      <summary>秘密は守ってもらえますか？</summary>
+      <div class="faq-answer">はい。ご相談内容の秘密は厳守します。M&Aの検討は、社員や取引先に知られたくないケースがほとんどです。安心してご連絡ください。</div>
+    </details>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-final" id="contact">
+  <h2>まず、話を聞かせてください。</h2>
+  <p>売る・売らない、相談してみるだけ——何も決めなくていいです。<br>「気になっている」その気持ちから、一緒に整理しましょう。</p>
+  <a href="https://linkrop.jp/freedom-lab/contact-2" class="btn-orange">無料相談を申し込む</a>
+  <p class="cta-note">秘密厳守 ／ 仲介を前提としない相談も歓迎</p>
+</div>
+
+<footer>
+  © 2026 Linkrop. All rights reserved.
+</footer>
+
+</body>
+</html>

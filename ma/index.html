@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M&Aの話が来た。でも、相手のペースで進むのは嫌だ。| Linkrop</title>
+<title>M&A仲介から営業があった。話は聞きたい。でも、このまま進むのは早い気がする。| Linkrop</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -34,6 +34,8 @@
     font-size: 15px;
     -webkit-font-smoothing: antialiased;
   }
+ 
+  /* NAV */
   nav {
     position: sticky; top: 0; z-index: 100;
     background: rgba(30,58,95,0.97);
@@ -51,9 +53,11 @@
     text-decoration: none; display: inline-block;
   }
   .nav-cta:hover { background: #b04a14; }
+ 
+  /* HERO */
   .hero {
     min-height: 86vh; display: flex; align-items: center;
-    padding: 100px 10% 80px;
+    padding: 100px 6% 80px;
     position: relative; overflow: hidden;
     background: linear-gradient(150deg, #f5f2ec 0%, #edeae2 100%);
   }
@@ -87,7 +91,9 @@
   }
   .btn-primary:hover { background: #b04a14; }
   .hero-note { font-size: 12px; color: var(--ink-faint); text-align: center; letter-spacing: .04em; }
-  section { padding: 80px 10%; max-width: 900px; margin: 0 auto; }
+ 
+  /* SECTIONS */
+  section { padding: 80px 6%; max-width: 1000px; margin: 0 auto; }
   .section-label {
     font-size: 10px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
     color: var(--accent); margin-bottom: 20px;
@@ -97,13 +103,18 @@
   h2 { font-family: var(--serif); font-size: clamp(22px, 3vw, 30px); font-weight: 700; line-height: 1.55; color: var(--ink); margin-bottom: 24px; }
   h3 { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 12px; }
   p { color: var(--ink-mid); margin-bottom: 16px; }
-  .divider { border: none; border-top: 1px solid var(--rule); max-width: 900px; margin: 0 auto; }
+ 
+  .divider { border: none; border-top: 1px solid var(--rule); max-width: 1000px; margin: 0 auto; }
+ 
+  /* ARUARU */
   .aruaru-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
   .aruaru-item {
     background: var(--paper-card); border: 1px solid var(--rule);
     border-left: 3px solid var(--accent); border-radius: 4px;
     padding: 14px 18px; font-size: 14px; color: var(--ink-mid); line-height: 1.7;
   }
+ 
+  /* MEDIATION */
   .mediation-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
   .mediation-col {
     background: var(--paper-card); border: 1px solid var(--rule);
@@ -123,6 +134,8 @@
     background: #f7f4ef; border-radius: 6px; border-left: 3px solid var(--accent-orange);
     font-size: 14px; color: var(--ink-mid); line-height: 1.8;
   }
+ 
+  /* CAN DO LIST */
   .can-list { list-style: none; margin: 24px 0; }
   .can-list li {
     padding: 16px 0; border-bottom: 1px solid var(--rule);
@@ -136,8 +149,12 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
   }
-  .can-icon-first { background: var(--accent); color: #fff; }
+  .can-icon-first {
+    background: var(--accent); color: #fff;
+  }
   .can-list li strong { color: var(--ink); display: block; margin-bottom: 4px; }
+ 
+  /* FEATURES */
   .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
   .feature-card {
     background: var(--paper-card); border: 1px solid var(--rule);
@@ -145,6 +162,8 @@
   }
   .feature-card h4 { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
   .feature-card p { font-size: 13px; color: var(--ink-light); line-height: 1.8; margin: 0; }
+ 
+  /* PROFILE */
   .profile-block {
     display: flex; gap: 40px; align-items: flex-start;
     background: var(--paper-card); border: 1px solid var(--rule);
@@ -181,6 +200,8 @@
     font-size: 11px; padding: 5px 12px; border-radius: 3px;
     border: 1px solid var(--rule-strong);
   }
+ 
+  /* FAQ */
   .faq-list { margin-top: 24px; }
   details { border-bottom: 1px solid var(--rule); padding: 20px 0; }
   details:first-child { border-top: 1px solid var(--rule); }
@@ -193,10 +214,12 @@
   summary::after { content: '+'; color: var(--accent); font-size: 20px; font-weight: 400; flex-shrink: 0; transition: transform .2s; }
   details[open] summary::after { transform: rotate(45deg); }
   .faq-answer { font-size: 14px; color: var(--ink-mid); line-height: 1.85; padding-top: 16px; padding-right: 32px; }
+ 
+  /* CTA FINAL */
   .cta-final {
     background: var(--accent); border-radius: 8px;
     padding: 64px 48px; text-align: center;
-    max-width: 860px; margin: 80px auto;
+    max-width: 1000px; margin: 80px auto;
   }
   .cta-final h2 { font-family: var(--serif); font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 14px; }
   .cta-final p { color: rgba(255,255,255,.8); font-size: 15px; margin-bottom: 32px; }
@@ -208,7 +231,9 @@
   }
   .btn-orange:hover { background: #b04a14; }
   .cta-note { margin-top: 16px; font-size: 12px; color: rgba(255,255,255,.55); }
+ 
   footer { border-top: 1px solid var(--rule); padding: 32px 40px; text-align: center; font-size: 12px; color: var(--ink-faint); }
+ 
   @media (max-width: 640px) {
     nav { padding: 12px 20px; }
     .hero { padding: 80px 24px 60px; }
@@ -216,11 +241,10 @@
     .aruaru-grid, .mediation-cols, .features-grid { grid-template-columns: 1fr; }
     .profile-block { flex-direction: column; gap: 20px; padding: 24px; }
     .cta-final { margin: 60px 20px; padding: 48px 24px; }
-  }
-</style>
+  }</style>
 </head>
 <body>
-
+ 
 <nav>
   <div class="logo-wrap">
     <span class="logo">Linkrop</span>
@@ -228,18 +252,19 @@
   </div>
   <a href="https://linkrop.jp/freedom-lab/contact-2" class="nav-cta">無料相談を申し込む</a>
 </nav>
-
+ 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-accent-bar"></div>
   <div class="hero-content">
     <div class="hero-eyebrow">M&A セカンドオピニオン</div>
     <h1 class="hero-headline">
-      M&Aの話が来た。<br>
-      でも、<em>相手のペースで進む</em>のは嫌だ。
+      M&A仲介から営業があった。<br>
+      話は聞きたい。でも、<em>このまま進むのは早い気がする。</em>
     </h1>
     <p class="hero-sub">
-      そう思ったら、まず第三者に話してください。<br>
-      売る・売らない、どちらにも偏らない相談相手が、ここにいます。
+      必要なのは、信頼でき、急かさない相談相手。<br>
+      売る・売らない、どちらにも偏らない第三者が、ここにいます。
     </p>
     <div class="hero-cta-group">
       <a href="https://linkrop.jp/freedom-lab/contact-2" class="btn-primary">まず話を聞く（無料・秘密厳守）</a>
@@ -247,13 +272,14 @@
     </div>
   </div>
 </div>
-
+ 
 <hr class="divider">
-
+ 
+<!-- あるある共感 -->
 <section>
   <div class="section-label">こんな状況ではないですか？</div>
   <h2>突然、M&Aの話が来た。<br>戸惑いながらも、無視はできない。</h2>
-  <p>M&A仲介会社や銀行から声をかけられた、あるいは知人から打診があった——そんな社長が最近増えています。悪い話ではないかもと思いながらも、どう動けばいいかわからない。そのまま気づけばプロセスが進んでいた、というケースも少なくありません。</p>
+  <p>M&A仲介会社や銀行から声をかけられた、あるいは知人から打診があった——そんな社長が最近増えています。悪い話ではないかもと思いながらも、どう動けばいいかわからない。そのまま気づけばプロセスが進んでいた、ということが嫌で何もしないでいる、というケースも少なくありません。</p>
   <div class="aruaru-grid">
     <div class="aruaru-item">突然DMや電話でアプローチが来た</div>
     <div class="aruaru-item">話は聞いてみたいが、相手の言いなりになりたくない</div>
@@ -266,9 +292,10 @@
     <div class="aruaru-item" style="grid-column:1/-1;">誰に相談すればいいか、わからない</div>
   </div>
 </section>
-
+ 
 <hr class="divider">
-
+ 
+<!-- M&A仲介の構造 -->
 <section>
   <div class="section-label">知っておいてほしいこと</div>
   <h2>M&A専業会社は、使い方次第。</h2>
@@ -290,9 +317,10 @@
     自分の意向・条件・優先順位を整理してから臨むことで、仲介会社との関係が対等になります。その準備を一緒にするのが、Linkropの役割のひとつです。
   </div>
 </section>
-
+ 
 <hr class="divider">
-
+ 
+<!-- できること -->
 <section>
   <div class="section-label">具体的にできること</div>
   <h2>「何でも聞いてください」では<br>なく、具体的にお手伝いします。</h2>
@@ -337,7 +365,7 @@
       <span class="can-icon">5</span>
       <div>
         <strong>M&A以外の選択肢も含めた整理</strong>
-        事業承継、MBO、縮小・集中など、M&A以外の道も含めて、本当にベストな選択を一緒に考えます。
+        事業承継、MBO、資本業務提携、縮小・集中など、M&A以外の道も含めて、本当にベストな選択を一緒に考えます。
       </div>
     </li>
     <li>
@@ -349,9 +377,10 @@
     </li>
   </ul>
 </section>
-
+ 
 <hr class="divider">
-
+ 
+<!-- Linkropの特徴 -->
 <section>
   <div class="section-label">Linkropの特徴</div>
   <h2>「相談しやすい」を<br>大切にしています。</h2>
@@ -374,15 +403,20 @@
     </div>
   </div>
 </section>
-
+ 
 <hr class="divider">
-
+ 
+<!-- プロフィール -->
 <section>
   <div class="section-label">なぜLinkropか</div>
   <h2>「売る側」も「金融の側」も、<br>両方わかる唯一の立場。</h2>
   <div class="profile-block">
     <div class="profile-img-wrap">
-      <img src="images_kuroki.jpg" alt="黒木 武将" class="profile-img">
+      <img
+        src="images/kuroki.jpg"
+        alt="黒木 武将"
+        class="profile-img"
+      >
       <span class="profile-tag">社長の将来設計パートナー</span>
     </div>
     <div class="profile-body">
@@ -424,9 +458,10 @@
     </div>
   </div>
 </section>
-
+ 
 <hr class="divider">
-
+ 
+<!-- FAQ -->
 <section>
   <div class="section-label">よくある質問</div>
   <h2>「聞いてもいいのかな」と<br>思ったことも、聞いてください。</h2>
@@ -441,7 +476,7 @@
     </details>
     <details>
       <summary>Linkropは仲介・M&Aアドバイザリーも手掛けているそうですが、相談するとM&Aに進む前提になりますか？</summary>
-      <div class="faq-answer">なりません。相談の結果、M&Aに進まないという結論になることも十分あり得ます。また、M&Aに進む場合でも、Linkropに仲介をお願いする前提ではありません。他の仲介会社やアドバイザーをご選択いただいても構いません。社長にとってベストな結果を優先します。</div>
+      <div class="faq-answer">なりません。相談の結果、M&Aに進まないという結論になることも十分あり得ます。また、M&Aに進む場合でも、Linkropに仲介を依頼する前提ではありません。他の仲介会社やアドバイザーをご選択いただいても構いません。社長にとってベストな結果を優先します。</div>
     </details>
     <details>
       <summary>一般的なM&A仲介・アドバイザリーとの違いは何ですか？</summary>
@@ -457,17 +492,19 @@
     </details>
   </div>
 </section>
-
+ 
+<!-- CTA FINAL -->
 <div class="cta-final" id="contact">
   <h2>まず、話を聞かせてください。</h2>
   <p>売る・売らない、仲介を頼む・頼まない——何も決めなくていいです。<br>今の状況を整理するところから、一緒に始めましょう。</p>
   <a href="https://linkrop.jp/freedom-lab/contact-2" class="btn-orange">無料相談を申し込む</a>
   <p class="cta-note">秘密厳守 ／ 仲介を前提としない相談も歓迎</p>
 </div>
-
+ 
 <footer>
-  © 2025 Linkrop. All rights reserved.
+  © 2026 Linkrop. All rights reserved.
 </footer>
-
+ 
 </body>
 </html>
+ 

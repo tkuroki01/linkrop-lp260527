@@ -34,7 +34,7 @@
     font-size: 15px;
     -webkit-font-smoothing: antialiased;
   }
- 
+
   /* NAV */
   nav {
     position: sticky; top: 0; z-index: 100;
@@ -53,10 +53,10 @@
     text-decoration: none; display: inline-block;
   }
   .nav-cta:hover { background: #b04a14; }
- 
+
   /* HERO */
   .hero {
-    min-height: 86vh; display: flex; align-items: center;
+    min-height: 86vh; display: flex; align-items: center; justify-content: center;
     padding: 100px 6% 80px;
     position: relative; overflow: hidden;
     background: linear-gradient(150deg, #f5f2ec 0%, #edeae2 100%);
@@ -65,8 +65,8 @@
     position: absolute; left: 0; top: 0; bottom: 0;
     width: 5px; background: var(--accent);
   }
-  .hero-content { position: relative; z-index: 2; max-width: 680px; }
-  .hero-eyebrow {
+  .hero-content { position: relative; z-index: 2; max-width: 760px; width: 100%; }
+  .hero-inner { max-width: 1000px; width: 100%; margin: 0 auto; position: relative; z-index: 2; }
     font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
     color: var(--accent); margin-bottom: 28px;
     display: flex; align-items: center; gap: 12px;
@@ -91,7 +91,7 @@
   }
   .btn-primary:hover { background: #b04a14; }
   .hero-note { font-size: 12px; color: var(--ink-faint); text-align: center; letter-spacing: .04em; }
- 
+
   /* SECTIONS */
   section { padding: 80px 6%; max-width: 1000px; margin: 0 auto; }
   .section-label {
@@ -103,9 +103,9 @@
   h2 { font-family: var(--serif); font-size: clamp(22px, 3vw, 30px); font-weight: 700; line-height: 1.55; color: var(--ink); margin-bottom: 24px; }
   h3 { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 12px; }
   p { color: var(--ink-mid); margin-bottom: 16px; }
- 
+
   .divider { border: none; border-top: 1px solid var(--rule); max-width: 1000px; margin: 0 auto; }
- 
+
   /* ARUARU */
   .aruaru-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
   .aruaru-item {
@@ -113,7 +113,7 @@
     border-left: 3px solid var(--accent); border-radius: 4px;
     padding: 14px 18px; font-size: 14px; color: var(--ink-mid); line-height: 1.7;
   }
- 
+
   /* MEDIATION */
   .mediation-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
   .mediation-col {
@@ -134,7 +134,7 @@
     background: #f7f4ef; border-radius: 6px; border-left: 3px solid var(--accent-orange);
     font-size: 14px; color: var(--ink-mid); line-height: 1.8;
   }
- 
+
   /* CAN DO LIST */
   .can-list { list-style: none; margin: 24px 0; }
   .can-list li {
@@ -153,7 +153,7 @@
     background: var(--accent); color: #fff;
   }
   .can-list li strong { color: var(--ink); display: block; margin-bottom: 4px; }
- 
+
   /* FEATURES */
   .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
   .feature-card {
@@ -162,7 +162,7 @@
   }
   .feature-card h4 { font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
   .feature-card p { font-size: 13px; color: var(--ink-light); line-height: 1.8; margin: 0; }
- 
+
   /* PROFILE */
   .profile-block {
     display: flex; gap: 40px; align-items: flex-start;
@@ -200,7 +200,7 @@
     font-size: 11px; padding: 5px 12px; border-radius: 3px;
     border: 1px solid var(--rule-strong);
   }
- 
+
   /* FAQ */
   .faq-list { margin-top: 24px; }
   details { border-bottom: 1px solid var(--rule); padding: 20px 0; }
@@ -214,7 +214,7 @@
   summary::after { content: '+'; color: var(--accent); font-size: 20px; font-weight: 400; flex-shrink: 0; transition: transform .2s; }
   details[open] summary::after { transform: rotate(45deg); }
   .faq-answer { font-size: 14px; color: var(--ink-mid); line-height: 1.85; padding-top: 16px; padding-right: 32px; }
- 
+
   /* CTA FINAL */
   .cta-final {
     background: var(--accent); border-radius: 8px;
@@ -231,9 +231,9 @@
   }
   .btn-orange:hover { background: #b04a14; }
   .cta-note { margin-top: 16px; font-size: 12px; color: rgba(255,255,255,.55); }
- 
+
   footer { border-top: 1px solid var(--rule); padding: 32px 40px; text-align: center; font-size: 12px; color: var(--ink-faint); }
- 
+
   @media (max-width: 640px) {
     nav { padding: 12px 20px; }
     .hero { padding: 80px 24px 60px; }
@@ -244,7 +244,7 @@
   }</style>
 </head>
 <body>
- 
+
 <nav>
   <div class="logo-wrap">
     <span class="logo">Linkrop</span>
@@ -252,29 +252,31 @@
   </div>
   <a href="https://linkrop.jp/freedom-lab/contact-2" class="nav-cta">無料相談を申し込む</a>
 </nav>
- 
+
 <!-- HERO -->
 <div class="hero">
   <div class="hero-accent-bar"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">M&A セカンドオピニオン</div>
-    <h1 class="hero-headline">
-      M&A仲介から営業があった。<br>
-      話は聞きたい。でも、<em>このまま進むのは早い気がする。</em>
-    </h1>
-    <p class="hero-sub">
-      必要なのは、信頼でき、急かさない相談相手。<br>
-      売る・売らない、どちらにも偏らない第三者が、ここにいます。
-    </p>
-    <div class="hero-cta-group">
-      <a href="https://linkrop.jp/freedom-lab/contact-2" class="btn-primary">まず話を聞く（無料・秘密厳守）</a>
-      <span class="hero-note">仲介を前提としない相談も大歓迎です</span>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">M&A セカンドオピニオン</div>
+      <h1 class="hero-headline">
+        M&A仲介から営業があった。<br>
+        話は聞きたい。でも、<em>このまま進むのは早い気がする。</em>
+      </h1>
+      <p class="hero-sub">
+        必要なのは、信頼でき、急かさない相談相手。<br>
+        売る・売らない、どちらにも偏らない第三者が、ここにいます。
+      </p>
+      <div class="hero-cta-group">
+        <a href="https://linkrop.jp/freedom-lab/contact-2" class="btn-primary">まず話を聞く（無料・秘密厳守）</a>
+        <span class="hero-note">仲介を前提としない相談も大歓迎です</span>
+      </div>
     </div>
   </div>
 </div>
- 
+
 <hr class="divider">
- 
+
 <!-- あるある共感 -->
 <section>
   <div class="section-label">こんな状況ではないですか？</div>
@@ -292,9 +294,9 @@
     <div class="aruaru-item" style="grid-column:1/-1;">誰に相談すればいいか、わからない</div>
   </div>
 </section>
- 
+
 <hr class="divider">
- 
+
 <!-- M&A仲介の構造 -->
 <section>
   <div class="section-label">知っておいてほしいこと</div>
@@ -317,9 +319,9 @@
     自分の意向・条件・優先順位を整理してから臨むことで、仲介会社との関係が対等になります。その準備を一緒にするのが、Linkropの役割のひとつです。
   </div>
 </section>
- 
+
 <hr class="divider">
- 
+
 <!-- できること -->
 <section>
   <div class="section-label">具体的にできること</div>
@@ -377,9 +379,9 @@
     </li>
   </ul>
 </section>
- 
+
 <hr class="divider">
- 
+
 <!-- Linkropの特徴 -->
 <section>
   <div class="section-label">Linkropの特徴</div>
@@ -403,20 +405,16 @@
     </div>
   </div>
 </section>
- 
+
 <hr class="divider">
- 
+
 <!-- プロフィール -->
 <section>
   <div class="section-label">なぜLinkropか</div>
   <h2>「売る側」も「金融の側」も、<br>両方わかる唯一の立場。</h2>
   <div class="profile-block">
     <div class="profile-img-wrap">
-      <img
-        src="images_kuroki.jpg"
-        alt="黒木 武将"
-        class="profile-img"
-      >
+      <img src="images_kuroki.jpg" alt="黒木 武将" class="profile-img">
       <span class="profile-tag">社長の将来設計パートナー</span>
     </div>
     <div class="profile-body">
@@ -458,9 +456,9 @@
     </div>
   </div>
 </section>
- 
+
 <hr class="divider">
- 
+
 <!-- FAQ -->
 <section>
   <div class="section-label">よくある質問</div>
@@ -492,7 +490,7 @@
     </details>
   </div>
 </section>
- 
+
 <!-- CTA FINAL -->
 <div class="cta-final" id="contact">
   <h2>まず、話を聞かせてください。</h2>
@@ -500,11 +498,10 @@
   <a href="https://linkrop.jp/freedom-lab/contact-2" class="btn-orange">無料相談を申し込む</a>
   <p class="cta-note">秘密厳守 ／ 仲介を前提としない相談も歓迎</p>
 </div>
- 
+
 <footer>
   © 2026 Linkrop. All rights reserved.
 </footer>
- 
+
 </body>
 </html>
- 

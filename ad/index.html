@@ -781,42 +781,44 @@ details[open] .faq-arrow { transform: rotate(180deg); }
    SEMINAR SECTION
 ══════════════════════════════════════ */
 .seminar-section {
-  background: linear-gradient(160deg, #0e1e3a 0%, #1a2e50 40%, #1e3d6a 100%);
+  background: linear-gradient(160deg, #fdf8f0 0%, #fef9f2 60%, #fff8ed 100%);
+  border-top: 4px solid #e8a830;
   padding: 96px 0;
   position: relative; overflow: hidden;
 }
 .seminar-section::before {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 60% 50% at 70% 30%, rgba(44,111,173,0.2) 0%, transparent 70%);
+  background: radial-gradient(ellipse 50% 60% at 80% 20%, rgba(232,168,48,0.08) 0%, transparent 70%);
 }
 .seminar-inner { position: relative; z-index: 1; }
 .seminar-badge {
   display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(240,192,112,0.15); border: 1px solid rgba(240,192,112,0.4);
+  background: rgba(232,168,48,0.12); border: 1px solid rgba(232,168,48,0.4);
   padding: 6px 16px; border-radius: 20px;
   font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
-  color: #f0c070; margin-bottom: 20px;
+  color: #b87d10; margin-bottom: 20px;
 }
 .seminar-h2 {
   font-family: 'Noto Serif JP', serif;
   font-size: clamp(22px, 2.8vw, 32px); font-weight: 700;
-  color: var(--white); line-height: 1.55; margin-bottom: 12px;
+  color: var(--navy); line-height: 1.55; margin-bottom: 12px;
 }
-.seminar-lead { font-size: 14px; color: #a8c4dc; line-height: 1.85; margin-bottom: 40px; }
+.seminar-lead { font-size: 14px; color: var(--gray-500); line-height: 1.85; margin-bottom: 40px; }
 .seminar-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--white);
+  border: 1px solid #e8d8b8;
   border-radius: 16px; overflow: hidden;
+  box-shadow: 0 4px 24px rgba(180,140,60,0.1);
 }
 .seminar-card-head {
-  background: rgba(44,111,173,0.25);
+  background: linear-gradient(90deg, var(--navy) 0%, #1e3a68 100%);
   padding: 20px 32px;
   display: flex; align-items: center; gap: 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: none;
 }
 .seminar-tag {
-  background: var(--accent); color: var(--white);
+  background: #e8a830; color: var(--white);
   font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
   padding: 4px 12px; border-radius: 3px; flex-shrink: 0;
 }
@@ -831,44 +833,41 @@ details[open] .faq-arrow { transform: rotate(180deg); }
 }
 .seminar-topics-title {
   font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
-  color: #7aadda; margin-bottom: 14px;
+  color: var(--blue); margin-bottom: 14px;
 }
 .seminar-topic {
   display: flex; gap: 10px; align-items: flex-start;
-  padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
-  font-size: 13px; color: #c8dce8; line-height: 1.6;
+  padding: 10px 0; border-bottom: 1px solid var(--gray-100);
+  font-size: 13px; color: var(--gray-700); line-height: 1.6;
 }
 .seminar-topic:last-child { border-bottom: none; }
 .seminar-topic-num {
   width: 20px; height: 20px; border-radius: 4px;
-  background: rgba(44,111,173,0.4);
-  color: #7aadda; font-size: 10px; font-weight: 700;
+  background: var(--blue-light);
+  color: var(--blue); font-size: 10px; font-weight: 700;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
-.seminar-benefit {
-  background: rgba(240,192,112,0.08);
-  border: 1px solid rgba(240,192,112,0.2);
-  border-radius: 10px; padding: 14px 18px;
-  margin-top: 12px;
-  font-size: 12.5px; color: #f0d090; line-height: 1.7;
-}
 .seminar-cta-row {
   padding: 24px 32px;
-  background: rgba(0,0,0,0.2);
-  border-top: 1px solid rgba(255,255,255,0.08);
+  background: #fdf6e8;
+  border-top: 1px solid #e8d8b8;
   display: flex; align-items: center; justify-content: space-between;
   gap: 24px; flex-wrap: wrap;
 }
-.seminar-price-info { font-size: 13px; color: #a8c4dc; }
-.seminar-price-info strong { color: var(--white); font-size: 15px; }
+.seminar-price-info { font-size: 13px; color: var(--gray-500); }
+.seminar-price-info strong { color: var(--navy); font-size: 15px; }
 .btn-seminar {
   display: inline-block;
-  background: #f0c070; color: var(--navy);
+  background: #e8a830; color: var(--white);
   padding: 14px 32px; border-radius: 5px;
   font-size: 14px; font-weight: 700;
   text-decoration: none;
   transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.btn-seminar:hover { background: #d4961e; transform: translateY(-1px); }
+
   white-space: nowrap;
 }
 .btn-seminar:hover { background: #f0d090; transform: translateY(-1px); }
@@ -1469,8 +1468,8 @@ details[open] .faq-arrow { transform: rotate(180deg); }
             <div class="seminar-topic-num">4</div>
             業績の良い「今」こそが、唯一のベストタイミングである理由
           </div>
-          <div style="margin-top:12px;padding:14px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;font-size:12.5px;color:#8ab0ca;line-height:1.7;">
-            <strong style="color:var(--white);display:block;margin-bottom:4px;">参加後の個別相談も受け付けています</strong>
+          <div style="margin-top:12px;padding:14px 16px;background:var(--blue-light);border:1px solid #c8dce8;border-radius:8px;font-size:12.5px;color:var(--gray-700);line-height:1.7;">
+            <strong style="color:var(--navy);display:block;margin-bottom:4px;">参加後の個別相談も受け付けています</strong>
             セミナーで全体像を理解した後、「自社に当てはめると？」という個別の疑問や相談にも対応しています。
           </div>
         </div>
@@ -1492,8 +1491,8 @@ details[open] .faq-arrow { transform: rotate(180deg); }
             <div class="seminar-topic-num">✓</div>
             税理士・銀行には相談しているが、物足りなさを感じている
           </div>
-          <div style="margin-top:16px;padding:14px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;font-size:12.5px;color:#8ab0ca;line-height:1.7;">
-            <strong style="color:var(--white);display:block;margin-bottom:4px;">🔒 秘密厳守</strong>
+          <div style="margin-top:16px;padding:14px 16px;background:#f5f8e8;border:1px solid #d0dca0;border-radius:8px;font-size:12.5px;color:var(--gray-700);line-height:1.7;">
+            <strong style="color:var(--navy);display:block;margin-bottom:4px;">🔒 秘密厳守</strong>
             参加は「財務・経営の勉強会」として対外的に説明可能。個別の相談内容が外部に開示されることはありません。
           </div>
         </div>
@@ -1504,10 +1503,10 @@ details[open] .faq-arrow { transform: rotate(180deg); }
             参加費：<span style="text-decoration:line-through;color:#6a90a8;font-size:13px;">5,500円（税込）</span>
             &nbsp;→&nbsp;<strong>無料</strong>
           </div>
-          <div style="font-size:12px;color:#7aadda;margin-bottom:8px;">
+          <div style="font-size:12px;color:#b87d10;margin-bottom:8px;">
             ※ まず気軽に知っていただくことが大切だと考え、初回は無料で開催しています
           </div>
-          <div style="font-size:12px;color:#a8c4dc;">
+          <div style="font-size:12px;color:var(--gray-500);">
             📅 開催日時：2025年7月3日（金）14:00〜15:00<br>
             📍 場所：オンライン開催（Zoom）<br>
             ご申込み後にURLをお送りします

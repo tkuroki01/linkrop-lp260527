@@ -896,11 +896,34 @@ details[open] .faq-arrow { transform: rotate(180deg); }
 /* ══════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════ */
+.value-navy-box {
+  background: var(--navy); border-radius: 14px;
+  padding: 32px 36px; margin-bottom: 24px;
+}
+.value-how-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+.value-two-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;
+}
+.value-steps-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.timing-callout {
+  background: linear-gradient(135deg, var(--navy) 0%, #1e3a68 100%);
+  border-radius: 12px; padding: 24px 32px; margin-bottom: 28px;
+  display: flex; align-items: center; gap: 24px;
+}
 @media (max-width: 768px) {
   .core-points { grid-template-columns: 1fr; }
   .core-point { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
   .core-point:last-child { border-bottom: none; }
   .value-grid { grid-template-columns: 1fr; }
+  .value-navy-box { padding: 20px 18px; border-radius: 10px; }
+  .value-how-grid { grid-template-columns: 1fr; }
+  .value-two-grid { grid-template-columns: 1fr; }
+  .value-steps-grid { grid-template-columns: 1fr; }
+  .timing-callout { flex-direction: column; gap: 12px; padding: 20px; }
   .seminar-card-body { grid-template-columns: 1fr; }
   .seminar-cta-row { flex-direction: column; align-items: flex-start; }
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1150,9 +1173,9 @@ details[open] .faq-arrow { transform: rotate(180deg); }
 
     <!-- 価値の構造：3層 -->
     <div class="fade-in" style="margin-bottom:40px;">
-      <div style="background:var(--navy);border-radius:14px;padding:32px 36px;margin-bottom:24px;">
+      <div class="value-navy-box">
         <div style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:#7aadda;margin-bottom:20px;">▶ 会社の価値はどう決まるか</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <div class="value-how-grid">
           <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:20px;">
             <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;color:#f0c070;margin-bottom:10px;">① 事業価値</div>
             <div style="font-size:13px;color:var(--white);font-weight:700;margin-bottom:8px;">収益力・安定性・成長性</div>
@@ -1172,7 +1195,7 @@ details[open] .faq-arrow { transform: rotate(180deg); }
       </div>
 
       <!-- 非事業価値と注意点 -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;">
+      <div class="value-two-grid">
         <div style="background:var(--white);border:1px solid var(--gray-100);border-radius:12px;padding:22px 24px;">
           <div style="font-size:12px;font-weight:700;color:var(--blue);margin-bottom:10px;">＋ 非事業性資産も価値になる</div>
           <div style="font-size:13px;color:var(--gray-700);line-height:1.75;">不動産・投資有価証券・過剰現金など、事業に直接使っていない資産も評価対象です。逆に、不要な負債や簿外リスクは価値を下げます。財務の棚卸しが重要です。</div>
@@ -1186,7 +1209,7 @@ details[open] .faq-arrow { transform: rotate(180deg); }
       <!-- 3ステップ -->
       <div style="background:var(--green-pale);border:1px solid #c0e0d0;border-radius:12px;padding:24px 28px;">
         <div style="font-size:12px;font-weight:700;letter-spacing:0.12em;color:var(--green);margin-bottom:16px;">▶ 今からできる3ステップ</div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <div class="value-steps-grid">
           <div style="display:flex;gap:12px;align-items:flex-start;">
             <div style="width:28px;height:28px;border-radius:50%;background:var(--green);color:var(--white);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
             <div>
@@ -1223,7 +1246,7 @@ details[open] .faq-arrow { transform: rotate(180deg); }
       <p class="section-lead">追い込まれてから動いても、もう遅い。業績が良く、社長が元気な「今」だからこそ、望ましいゴールに近づける。時間の余裕があることが、あらゆる交渉における最大の武器です。先送りするたびに、その力は少しずつ失われていきます。</p>
     </div>
 
-    <div class="fade-in" style="background:linear-gradient(135deg,var(--navy) 0%,#1e3a68 100%);border-radius:12px;padding:24px 32px;margin-bottom:28px;display:flex;align-items:center;gap:24px;">
+    <div class="fade-in timing-callout">
       <div style="font-size:40px;flex-shrink:0;">⚖️</div>
       <div>
         <div style="font-size:13px;font-weight:700;color:#f0c070;margin-bottom:6px;">時間の余裕＝交渉力</div>

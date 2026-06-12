@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M&A・事業承継の「セカンドオピニオン」| Linkrop</title>
+<meta name="description" content="M&A仲介会社や税理士・銀行に相談中の社長へ。契約前に、第三者の目線で整理しませんか。金融25年・経営者13年・自ら事業譲渡を経験したアドバイザーが、社長の立場で伴走します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:      #1a2e50;
+  --navy-mid:  #243d6b;
+  --blue:      #2c6fad;
+  --blue-mid:  #4585c0;
+  --blue-pale: #ddeaf6;
+  --blue-light:#eef5fb;
+  --accent:    #1a6e4a;
+  --accent-mid:#228559;
+  --accent-pale:#e4f3ec;
+  --white:     #ffffff;
+  --off-white: #f8fafc;
+  --stone:     #f3f1ee;
+  --gray-100:  #e8edf3;
+  --gray-300:  #b0bcc9;
+  --gray-500:  #6d7f92;
+  --gray-700:  #3a4a5c;
+  --gray-900:  #1e2a35;
+  --green:     #1e6b45;
+  --green-pale:#e4f2eb;
+  --gold:      #e8a830;
+  --gold-pale: #fdf4e0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--gray-900);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;}
+.container{max-width:960px;margin:0 auto;padding:0 24px;}
+.container-wide{max-width:1120px;margin:0 auto;padding:0 24px;}
+.serif{font-family:'Noto Serif JP',serif;}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:rgba(26,46,80,0.97);backdrop-filter:blur(8px);padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--white);letter-spacing:0.05em;text-decoration:none;}
+.nav-brand span{color:#7aadda;font-size:11px;font-weight:300;display:block;letter-spacing:0.1em;font-family:'Noto Sans JP',sans-serif;}
+.nav-badge{background:rgba(232,168,48,0.18);border:1px solid rgba(232,168,48,0.5);color:#f0c070;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:5px 14px;border-radius:20px;}
+.nav-cta{background:var(--accent);color:var(--white);border:none;border-radius:4px;padding:10px 22px;font-size:13px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;text-decoration:none;transition:background 0.2s;white-space:nowrap;}
+.nav-cta:hover{background:var(--accent-mid);}
+
+/* ALERT BANNER */
+.alert-banner{background:var(--gold-pale);border-bottom:2px solid var(--gold);padding:13px 24px;text-align:center;}
+.alert-banner-text{font-size:13.5px;color:#7a5010;font-weight:500;line-height:1.6;}
+.alert-banner-text strong{color:#5a3a00;}
+
+/* HERO */
+.hero{background:var(--navy);position:relative;overflow:hidden;padding:100px 0 90px;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 80% 30%,rgba(44,111,173,0.25) 0%,transparent 60%),radial-gradient(ellipse 40% 60% at 10% 80%,rgba(184,76,14,0.12) 0%,transparent 50%);}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1120px;margin:0 auto;padding:0 24px;}
+.hero-eyebrow{font-size:13px;font-weight:700;letter-spacing:0.1em;color:#f0c070;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.hero-eyebrow::before{content:'';width:32px;height:2px;background:#f0c070;flex-shrink:0;}
+.hero-so-badge{display:inline-block;background:rgba(232,168,48,0.15);border:1px solid rgba(232,168,48,0.45);color:#f0c070;font-size:13px;font-weight:700;letter-spacing:0.1em;padding:6px 18px;border-radius:4px;margin-bottom:20px;}
+.hero-h1{font-family:'Noto Serif JP',serif;font-size:clamp(24px,3vw,38px);font-weight:700;color:var(--white);line-height:1.55;margin-bottom:20px;}
+.hero-h1 em{font-style:normal;color:#f0c070;font-size:0.82em;font-weight:400;display:block;margin-bottom:8px;}
+.hero-h1 strong{color:#f0c070;}
+.hero-lead{font-size:15px;color:#a8c4dc;line-height:1.9;margin-bottom:36px;}
+.hero-cta-group{display:flex;flex-direction:column;gap:12px;}
+.btn-primary{display:inline-block;background:var(--accent);color:var(--white);padding:16px 32px;border-radius:5px;font-size:15px;font-weight:700;text-decoration:none;text-align:center;transition:background 0.2s,transform 0.15s;border:none;cursor:pointer;font-family:'Noto Sans JP',sans-serif;}
+.btn-primary:hover{background:var(--accent-mid);transform:translateY(-1px);}
+.btn-secondary{display:inline-block;background:transparent;color:#a8c4dc;padding:14px 32px;border-radius:5px;font-size:14px;font-weight:500;text-decoration:none;text-align:center;border:1px solid rgba(168,196,220,0.35);transition:border-color 0.2s,color 0.2s;font-family:'Noto Sans JP',sans-serif;}
+.btn-secondary:hover{border-color:#a8c4dc;color:var(--white);}
+.hero-note{font-size:12px;color:var(--gray-300);}
+.hero-right{display:flex;flex-direction:column;gap:14px;}
+.concern-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:18px 22px;display:flex;gap:14px;align-items:flex-start;backdrop-filter:blur(4px);}
+.concern-mark{width:28px;height:28px;border-radius:50%;background:rgba(184,76,14,0.3);color:#f0a060;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.concern-text{font-size:13.5px;color:#c8dce8;line-height:1.65;}
+
+/* STRIP — mixed stat/text */
+.strip{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);padding:36px 0;}
+.strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+.strip-item{text-align:center;padding:0 32px;border-right:1px solid rgba(255,255,255,0.1);}
+.strip-item:last-child{border-right:none;}
+.strip-num{font-family:'DM Serif Display',serif;font-size:38px;color:#f0c070;line-height:1;margin-bottom:6px;}
+.strip-label{font-size:13px;color:#7aadda;line-height:1.7;font-weight:500;}
+.strip-sublabel{font-size:11px;color:#4a7090;line-height:1.5;margin-top:4px;}
+
+/* SECTION COMMON */
+.section{padding:96px 0;}
+.section-alt{background:var(--off-white);}
+.section-dark{background:var(--navy);}
+.section-stone{background:var(--stone);}
+.section-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;padding:5px 14px;border:1px solid var(--blue-pale);border-radius:20px;background:var(--blue-light);}
+.section-tag-accent{color:var(--accent);border-color:var(--accent-pale);background:var(--accent-pale);}
+.section-tag-gold{color:#b87d10;border-color:rgba(232,168,48,0.4);background:var(--gold-pale);}
+.section-h2{font-family:'Noto Serif JP',serif;font-size:clamp(22px,2.8vw,34px);font-weight:700;color:var(--navy);line-height:1.5;margin-bottom:16px;}
+.section-h2-white{color:var(--white);}
+.section-lead{font-size:15px;color:var(--gray-500);line-height:1.85;max-width:640px;margin-bottom:56px;}
+.section-lead-white{color:#a8c4dc;}
+
+/* WHAT IS SO */
+.so-definition{background:linear-gradient(135deg,var(--navy) 0%,#1e3a68 100%);border-radius:16px;padding:40px 48px;border-left:5px solid var(--gold);margin-bottom:40px;}
+.so-def-label{font-size:11px;font-weight:700;letter-spacing:0.2em;color:var(--gold);margin-bottom:14px;}
+.so-def-text{font-family:'Noto Serif JP',serif;font-size:clamp(17px,2vw,22px);font-weight:700;color:var(--white);line-height:1.75;margin-bottom:16px;}
+.so-def-sub{font-size:14px;color:#a8c4dc;line-height:1.9;}
+.so-points{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.so-point{background:var(--white);border:1px solid var(--gray-100);border-radius:12px;padding:24px 20px;position:relative;overflow:hidden;transition:box-shadow 0.2s;}
+.so-point:hover{box-shadow:0 6px 20px rgba(26,46,80,0.1);}
+.so-point::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--blue);}
+.so-point-num{font-size:11px;font-weight:700;letter-spacing:0.12em;color:var(--gray-300);margin-bottom:8px;}
+.so-point-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:10px;}
+.so-point-body{font-size:13px;color:var(--gray-500);line-height:1.7;}
+
+/* TIMING (key new section) */
+.timing-box{background:linear-gradient(135deg,#1e4a2a 0%,#1a3d20 100%);border-radius:16px;padding:36px 40px;border-left:5px solid var(--green);margin-bottom:32px;}
+.timing-tag{font-size:11px;font-weight:700;letter-spacing:0.18em;color:#6dbf8a;margin-bottom:12px;}
+.timing-title{font-family:'Noto Serif JP',serif;font-size:clamp(18px,2vw,24px);font-weight:700;color:var(--white);line-height:1.6;margin-bottom:14px;}
+.timing-body{font-size:14px;color:#9fd4b0;line-height:1.9;}
+.timing-note{margin-top:14px;font-size:13px;color:#7ab8a0;border-top:1px solid rgba(255,255,255,0.1);padding-top:14px;}
+
+.timeline-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--gray-100);border-radius:12px;overflow:hidden;margin-top:32px;}
+.tl-item{padding:20px 16px;border-right:1px solid var(--gray-100);text-align:center;}
+.tl-item:last-child{border-right:none;}
+.tl-dot{width:12px;height:12px;border-radius:50%;margin:0 auto 10px;}
+.tl-label{font-size:12px;font-weight:700;margin-bottom:6px;}
+.tl-desc{font-size:11.5px;color:var(--gray-500);line-height:1.6;}
+.tl-item.t1{background:var(--green-pale);}
+.tl-item.t1 .tl-dot{background:var(--green);}
+.tl-item.t1 .tl-label{color:var(--green);}
+.tl-item.t2{background:var(--blue-light);}
+.tl-item.t2 .tl-dot{background:var(--blue);}
+.tl-item.t2 .tl-label{color:var(--blue);}
+.tl-item.t3{background:#fbeee7;}
+.tl-item.t3 .tl-dot{background:#b84c0e;}
+.tl-item.t3 .tl-label{color:#b84c0e;}
+.tl-item.t4{background:#fdf0ef;}
+.tl-item.t4 .tl-dot{background:#c0392b;}
+.tl-item.t4 .tl-label{color:#c0392b;}
+
+/* SCENES */
+.scene-grid{display:flex;flex-direction:column;gap:16px;}
+.scene-item{background:var(--white);border:1px solid var(--gray-100);border-radius:12px;padding:20px 24px;display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:start;transition:border-color 0.2s,box-shadow 0.2s;}
+.scene-item:hover{border-color:var(--blue-pale);box-shadow:0 4px 16px rgba(44,111,173,0.08);}
+.scene-icon{width:48px;height:48px;border-radius:10px;background:var(--blue-light);color:var(--blue);font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.scene-label{font-size:11px;font-weight:700;letter-spacing:0.12em;color:var(--blue);margin-bottom:4px;}
+.scene-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.scene-body{font-size:13px;color:var(--gray-500);line-height:1.7;}
+.scene-note{display:inline-block;margin-top:8px;font-size:11.5px;color:var(--accent);font-weight:700;background:var(--accent-pale);padding:3px 10px;border-radius:4px;}
+
+/* PAIN */
+.pain-list{display:flex;flex-direction:column;gap:12px;}
+.pain-item{display:flex;align-items:flex-start;gap:16px;background:var(--white);border:1px solid var(--gray-100);border-radius:10px;padding:20px 24px;transition:border-color 0.2s,box-shadow 0.2s;}
+.pain-item:hover{border-color:var(--blue-pale);box-shadow:0 4px 16px rgba(44,111,173,0.08);}
+.pain-check{width:28px;height:28px;border-radius:5px;border:2px solid var(--blue-pale);background:var(--blue-light);flex-shrink:0;margin-top:1px;}
+.pain-text{font-size:14px;color:var(--gray-700);line-height:1.7;}
+
+/* COMPARE */
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;}
+.compare-card{border-radius:12px;overflow:hidden;}
+.compare-head{padding:14px 20px;font-size:13px;font-weight:700;letter-spacing:0.05em;}
+.compare-head-bad{background:#f5e8e4;color:#b84c0e;}
+.compare-head-good{background:var(--green-pale);color:var(--green);}
+.compare-body{padding:20px;}
+.compare-body-bad{background:#fdf7f5;border:1px solid #f5e8e4;border-top:none;border-radius:0 0 12px 12px;}
+.compare-body-good{background:#f5fbf7;border:1px solid #d0eadb;border-top:none;border-radius:0 0 12px 12px;}
+.compare-list{display:flex;flex-direction:column;gap:10px;}
+.compare-list li{font-size:13.5px;line-height:1.65;display:flex;align-items:flex-start;gap:10px;}
+.compare-list li::before{flex-shrink:0;margin-top:3px;font-size:13px;}
+.compare-body-bad .compare-list li::before{content:'✗';color:#b84c0e;}
+.compare-body-good .compare-list li::before{content:'◎';color:var(--green);font-weight:700;}
+
+/* VALUE APPROACH (new section: raise value before selling) */
+.approach-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:32px;align-items:start;}
+.approach-highlight{background:linear-gradient(135deg,var(--navy) 0%,#1e3a68 100%);border-radius:14px;padding:32px;border-left:4px solid #f0c070;margin-bottom:0;}
+.approach-hl-label{font-size:11px;font-weight:700;letter-spacing:0.15em;color:#f0c070;margin-bottom:10px;}
+.approach-hl-text{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--white);line-height:1.7;}
+.approach-factors{display:flex;flex-direction:column;gap:12px;}
+.approach-factor{background:var(--white);border:1px solid var(--gray-100);border-radius:10px;padding:16px 20px;display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start;}
+.approach-factor-icon{width:32px;height:32px;border-radius:8px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.approach-factor-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.approach-factor-desc{font-size:12px;color:var(--gray-500);line-height:1.65;}
+
+/* PILLARS (dark section) */
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.pillar-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:32px 24px;}
+.pillar-num{font-family:'DM Serif Display',serif;font-size:48px;color:rgba(240,192,112,0.25);line-height:1;margin-bottom:12px;}
+.pillar-title{font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px;line-height:1.5;}
+.pillar-body{font-size:13px;color:#8ab0ca;line-height:1.8;}
+
+/* PROCESS */
+.step-item{background:var(--white);border:1px solid var(--gray-100);border-radius:12px;overflow:hidden;display:grid;grid-template-columns:80px 1fr;align-items:stretch;margin-bottom:16px;transition:box-shadow 0.2s;}
+.step-item:hover{box-shadow:0 6px 20px rgba(26,46,80,0.08);}
+.step-num-col{background:var(--navy);color:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:0.05em;gap:4px;padding:16px 8px;}
+.step-num-col.featured{background:var(--blue);}
+.step-num-big{font-family:'DM Serif Display',serif;font-size:26px;color:rgba(255,255,255,0.8);line-height:1;}
+.step-body{padding:20px 24px;}
+.step-badge{display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:3px;margin-bottom:8px;}
+.badge-free{background:var(--green-pale);color:var(--green);}
+.badge-paid{background:var(--navy);color:var(--white);}
+.badge-opt{background:var(--accent-pale);color:var(--accent);}
+.step-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.step-desc{font-size:13px;color:var(--gray-500);line-height:1.65;}
+
+/* PROFILE */
+.profile-grid{display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:start;}
+.profile-img-wrap{position:relative;}
+.profile-badge{position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--white);font-size:12px;font-weight:700;padding:8px 20px;border-radius:20px;white-space:nowrap;box-shadow:0 4px 12px rgba(26,110,74,0.3);}
+.profile-name{font-family:'Noto Serif JP',serif;font-size:28px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.profile-kana{font-size:13px;color:var(--gray-500);margin-bottom:20px;}
+.profile-title{font-size:14px;color:var(--blue);font-weight:500;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--gray-100);}
+.exp-list{display:flex;flex-direction:column;gap:16px;margin-bottom:28px;}
+.exp-item{display:flex;gap:16px;align-items:flex-start;}
+.exp-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:7px;}
+.exp-label{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.exp-desc{font-size:13px;color:var(--gray-500);line-height:1.7;}
+.cred-row{display:flex;flex-wrap:wrap;gap:8px;}
+.cred-tag{font-size:11.5px;color:var(--gray-700);background:var(--gray-100);padding:5px 12px;border-radius:4px;}
+
+/* PLEDGE (3-col neutrality) */
+.pledge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+.pledge-item{padding:32px 28px;border-right:1px solid var(--gray-100);background:var(--white);}
+.pledge-item:first-child{border-radius:12px 0 0 12px;}
+.pledge-item:last-child{border-right:none;border-radius:0 12px 12px 0;}
+.pledge-icon{font-size:28px;margin-bottom:14px;display:block;}
+.pledge-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--navy);line-height:1.5;margin-bottom:10px;}
+.pledge-body{font-size:13px;color:var(--gray-500);line-height:1.8;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:0;}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.08);}
+.faq-q{padding:22px 0;display:flex;align-items:flex-start;gap:16px;cursor:pointer;list-style:none;}
+.faq-q::-webkit-details-marker{display:none;}
+.faq-icon{width:26px;height:26px;border-radius:50%;background:rgba(122,173,218,0.15);color:#7aadda;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.faq-qt{font-size:14px;font-weight:700;color:var(--white);line-height:1.6;flex:1;}
+.faq-arrow{color:#7aadda;font-size:18px;margin-left:auto;transition:transform 0.3s;flex-shrink:0;}
+details[open] .faq-arrow{transform:rotate(180deg);}
+.faq-a{font-size:13.5px;color:#8ab0ca;line-height:1.85;padding:0 0 22px 42px;}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--navy) 0%,#1e3d6a 50%,#142840 100%);padding:96px 0;text-align:center;position:relative;overflow:hidden;}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 50% 50%,rgba(44,111,173,0.2) 0%,transparent 70%);}
+.cta-inner{position:relative;z-index:1;}
+.cta-sub{font-size:13px;color:#7aadda;letter-spacing:0.1em;margin-bottom:16px;}
+.cta-h2{font-family:'Noto Serif JP',serif;font-size:clamp(22px,3vw,34px);font-weight:700;color:var(--white);line-height:1.55;margin-bottom:16px;}
+.cta-lead{font-size:14px;color:#a8c4dc;line-height:1.85;margin-bottom:40px;}
+.cta-buttons{display:flex;flex-direction:column;align-items:center;gap:14px;}
+.cta-note{font-size:12px;color:var(--gray-500);}
+.cta-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;max-width:920px;margin-left:auto;margin-right:auto;}
+.cta-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:20px;font-size:13px;color:#a8c4dc;line-height:1.7;text-align:left;}
+.cta-card strong{color:var(--white);display:block;margin-bottom:6px;}
+
+/* SEMINAR */
+.seminar-section{background:linear-gradient(160deg,#fdf8f0 0%,#fef9f2 60%,#fff8ed 100%);border-top:4px solid #e8a830;padding:96px 0;position:relative;overflow:hidden;}
+.seminar-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 80% 20%,rgba(232,168,48,0.08) 0%,transparent 70%);}
+.seminar-inner{position:relative;z-index:1;}
+.seminar-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,168,48,0.12);border:1px solid rgba(232,168,48,0.4);padding:6px 16px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:0.12em;color:#b87d10;margin-bottom:20px;}
+.seminar-h2{font-family:'Noto Serif JP',serif;font-size:clamp(22px,2.8vw,32px);font-weight:700;color:var(--navy);line-height:1.55;margin-bottom:12px;}
+.seminar-lead{font-size:15px;color:var(--gray-500);line-height:1.85;max-width:600px;margin-bottom:48px;}
+.seminar-card{background:var(--white);border:1px solid rgba(232,168,48,0.3);border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(232,168,48,0.12);}
+.seminar-card-head{background:linear-gradient(135deg,var(--navy) 0%,#1e3a68 100%);padding:24px 32px;display:flex;align-items:center;gap:16px;}
+.seminar-tag{background:rgba(240,192,112,0.2);border:1px solid rgba(240,192,112,0.4);color:#f0c070;font-size:10px;font-weight:700;letter-spacing:0.18em;padding:5px 12px;border-radius:4px;white-space:nowrap;}
+.seminar-card-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--white);line-height:1.5;}
+.seminar-card-body{padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.seminar-topics-title{font-size:12px;font-weight:700;color:var(--navy);letter-spacing:0.08em;margin-bottom:14px;}
+.seminar-topic{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:var(--gray-700);line-height:1.6;margin-bottom:12px;}
+.seminar-topic-num{width:22px;height:22px;border-radius:50%;background:var(--navy);color:var(--white);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.seminar-cta-row{padding:24px 32px;border-top:1px solid var(--gray-100);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.seminar-price-info{font-size:14px;color:var(--navy);font-weight:700;}
+.btn-seminar{display:inline-block;background:var(--accent);color:var(--white);padding:14px 32px;border-radius:5px;font-size:15px;font-weight:700;text-decoration:none;transition:background 0.2s;white-space:nowrap;}
+.btn-seminar:hover{background:var(--accent-mid);}
+
+/* FOOTER */
+.footer{background:var(--gray-900);padding:40px 24px;text-align:center;}
+.footer-brand{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:16px;}
+.footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:24px;margin-bottom:20px;}
+.footer-links a{font-size:12px;color:var(--gray-300);text-decoration:none;}
+.footer-links a:hover{color:var(--white);}
+.footer-copy{font-size:11px;color:var(--gray-500);}
+
+@media(max-width:768px){
+  .hero-grid,.compare-grid,.approach-grid,.profile-grid{grid-template-columns:1fr;}
+  .so-points,.pillars-grid,.pledge-grid,.cta-cards{grid-template-columns:1fr;}
+  .strip-grid{grid-template-columns:1fr;}
+  .strip-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);padding:20px 0;}
+  .strip-item:last-child{border-bottom:none;}
+  .pledge-item{border-right:none;border-bottom:1px solid var(--gray-100);}
+  .pledge-item:first-child{border-radius:12px 12px 0 0;}
+  .pledge-item:last-child{border-radius:0 0 12px 12px;border-bottom:none;}
+  .profile-img-wrap{max-width:260px;margin:0 auto 48px;}
+  .seminar-card-body{grid-template-columns:1fr;}
+  .seminar-cta-row{flex-direction:column;align-items:stretch;}
+  .timeline-strip{grid-template-columns:1fr 1fr;}
+  .nav-badge{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ALERT BANNER -->
+<div class="alert-banner">
+  <p class="alert-banner-text">
+    <strong>M&A仲介会社から提案を受けている社長へ</strong>　――　「誰に相談すればいいかわからない」と感じているなら、それがセカンドオピニオンのサインです。
+  </p>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">Linkrop<span>事業承継セカンドオピニオン</span></a>
+    <div class="nav-badge">🔍 SECOND OPINION</div>
+    <a href="https://linkrop.jp/freedom-lab/contact" target="_blank" rel="noopener" class="nav-cta">無料相談を申し込む →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-eyebrow">M&amp;A・事業承継 セカンドオピニオン</div>
+      <div class="hero-so-badge">🔍 SECOND OPINION SERVICE</div>
+      <h1 class="hero-h1">
+        <em>M&Aの提案を受けている。<br>でも、誰に相談すればいいかわからない。</em>
+        それが、<strong>セカンドオピニオンを<br>必要としているサインです。</strong>
+      </h1>
+      <p class="hero-lead">
+        仲介会社は成約で動きます。税理士・銀行にはそれぞれの専門領域があります。<br>
+        「社長の立場で、全体を横断して整理してくれる人」——<br>それがセカンドオピニオンの役割です。
+      </p>
+      <div class="hero-cta-group">
+        <a href="https://linkrop.jp/freedom-lab/contact" target="_blank" rel="noopener" class="btn-primary">無料セカンドオピニオン相談を申し込む（60分）→</a>
+        <a href="#what-is-so" class="btn-secondary">セカンドオピニオンとは？</a>
+        <p class="hero-note">秘密厳守・完全1対1・仲介契約前がおすすめ</p>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="concern-card">
+        <div class="concern-mark">?</div>
+        <p class="concern-text">M&A仲介会社から「今が売り時」と言われているが、本当にそうなのか確かめたい。</p>
+      </div>
+      <div class="concern-card">
+        <div class="concern-mark">?</div>
+        <p class="concern-text">提示された価格が妥当かどうか自分では判断できない。誰かに確認してほしい。</p>
+      </div>
+      <div class="concern-card">
+        <div class="concern-mark">?</div>
+        <p class="concern-text">税理士・銀行にも相談しているが、「会社の未来全体」を横断して見てくれる人がいない。</p>
+      </div>
+      <div class="concern-card">
+        <div class="concern-mark">?</div>
+        <p class="concern-text">売却・承継以外の選択肢があるのかどうか、フラットに教えてくれる相手が欲しい。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-grid container-wide">
+    <div class="strip-item fade-in">
+      <div class="strip-num">両手仲介</div>
+      <div class="strip-label">中小企業のM&A仲介会社は売り手・買い手の双方から報酬を受け取るケースも多い。構造的な利益相反が生まれやすい。</div>
+    </div>
+    <div class="strip-item fade-in">
+      <div class="strip-num">契約前</div>
+      <div class="strip-label">セカンドオピニオンを活用するなら仲介契約の前が最適。契約後は制約を受ける条項にしばられることも。</div>
+    </div>
+    <div class="strip-item fade-in">
+      <div class="strip-num" style="font-size:22px;line-height:1.3;">相談は、M&Aの<br>スタートではありません。</div>
+      <div class="strip-label">知ることと決めることは別です。相談相手がいる安心感から。</div>
+      <div class="strip-sublabel">60分・秘密厳守</div>
+    </div>
+  </div>
+</div>
+
+<!-- GUIDELINE AUTHORITY BANNER -->
+<div style="background:var(--navy-mid);border-top:3px solid #f0c070;border-bottom:3px solid #f0c070;padding:40px 0;">
+  <div class="container-wide">
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;" class="fade-in">
+      <div style="text-align:center;flex-shrink:0;">
+        <div style="font-size:36px;line-height:1;margin-bottom:6px;">📜</div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.15em;color:#f0c070;">GUIDELINE</div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.18em;color:#f0c070;margin-bottom:10px;">中小企業M&Aガイドライン（中小企業庁）より</div>
+        <p style="font-family:'Noto Serif JP',serif;font-size:17px;font-weight:700;color:var(--white);line-height:1.7;margin-bottom:10px;">セカンドオピニオンの活用は、M&Aの意思決定を後押しし、<br>安心してM&Aを進める上で有効だとされています。</p>
+        <p style="font-size:13px;color:#a8c4dc;line-height:1.85;"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT IS SECOND OPINION -->
+<section class="section" id="what-is-so">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag section-tag-gold">セカンドオピニオンとは</div>
+      <h2 class="section-h2">不安に感じたら第三者の意見を求めたくなる——<br>それは至極自然なことです。</h2>
+      <p class="section-lead">仲介会社や税理士とは別に、「社長の立場で全体を整理してくれる人」が欲しい——そう感じているなら、セカンドオピニオンが答えです。医療でも法律でも当たり前のように行われているこのアプローチは、M&A・事業承継においても有効です。</p>
+    </div>
+    <div class="so-definition fade-in">
+      <div class="so-def-label">WHAT IS SECOND OPINION</div>
+      <p class="so-def-text">「今の提案が本当に自分に合っているか」を、<br>第三者の視点で客観的に確認すること。</p>
+      <p class="so-def-sub">医療でも法律でも当たり前のように行われるセカンドオピニオン——会社の未来を左右するM&A・事業承継においても、同じ発想が大切です。Linkropは、提案の妥当性・他の選択肢・価値向上の可能性を社長の視点で整理します。</p>
+    </div>
+    <div class="so-points fade-in">
+      <div class="so-point">
+        <div class="so-point-num">POINT 01</div>
+        <div class="so-point-title">提案の妥当性を検証する</div>
+        <p class="so-point-body">提示された価格・条件・スキームが社長にとって適切かどうか、独立した目線で評価します。</p>
+      </div>
+      <div class="so-point">
+        <div class="so-point-num">POINT 02</div>
+        <div class="so-point-title">他の選択肢を再確認する</div>
+        <p class="so-point-body">M&Aだけが出口ではありません。社員承継・外部経営者招聘・一部事業売却・提携・計画廃業など、現在の提案が本当に最善かを全体視点で整理します。</p>
+      </div>
+      <div class="so-point">
+        <div class="so-point-num">POINT 03</div>
+        <div class="so-point-title">社長が主体的に選んだ決断をつくる</div>
+        <p class="so-point-body">「知って、納得した上で選んでいる」状態にすることが目的です。仲介会社や売り手のペースではなく、社長自身が情報を持ち、自分で選択できる状態をつくります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMING: CONTRACT TIMING IS KEY -->
+<section class="section section-stone">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag section-tag-accent">相談のタイミング</div>
+      <h2 class="section-h2">仲介会社と契約する前が<br>セカンドオピニオンの最適タイミングです。</h2>
+      <p class="section-lead">仲介会社と契約を結ぶと、専属条項などの制約が生まれ、第三者のアドバイスが入りにくくなることがあります。動く前に、まず整理しましょう。</p>
+    </div>
+    <div class="timing-box fade-in">
+      <div class="timing-tag">IMPORTANT — 仲介契約前が最適</div>
+      <div class="timing-title">仲介会社の契約書には、行動を制限する条項が含まれることがあります。<br>契約前にその内容も含めて確認しておくことが重要です。</div>
+      <div class="timing-body">専属専任媒介・秘密保持義務・禁止行為条項など、仲介契約の内容によっては、契約後に「別の相談先に相談できない」「他の売却先を自分で探せない」といった制約が生じることがあります。Linkropでは、仲介契約書の内容レビューも対応します。何が制約になりうるかを事前に把握しておくことで、選択肢を守ることができます。</div>
+      <div class="timing-note">※ 仲介会社と契約済みの場合でも、契約内容の範囲内でセカンドオピニオンを提供することは可能です。まずはご相談ください。</div>
+    </div>
+    <div class="timeline-strip fade-in">
+      <div class="tl-item t1">
+        <div class="tl-dot"></div>
+        <div class="tl-label">✅ 今すぐ（最善）</div>
+        <div class="tl-desc">仲介会社に相談する前。選択肢・価値・条件を整理してから交渉に臨める。最も主導権がある。</div>
+      </div>
+      <div class="tl-item t2">
+        <div class="tl-dot"></div>
+        <div class="tl-label">仲介会社との<br>初期面談後</div>
+        <div class="tl-desc">提案の妥当性を第三者目線で確認するのに最適。契約前なので制約なし。</div>
+      </div>
+      <div class="tl-item t3">
+        <div class="tl-dot"></div>
+        <div class="tl-label">仲介契約後</div>
+        <div class="tl-desc">契約内容の確認が必要。契約で許容されている範囲内でのサポートは可能。</div>
+      </div>
+      <div class="tl-item t4">
+        <div class="tl-dot"></div>
+        <div class="tl-label">最終契約直前</div>
+        <div class="tl-desc">交渉余地が少ない。それでも確認した方が良いことがあります。まずご連絡を。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IS THIS FOR -->
+<section class="section">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag section-tag-accent">こんな社長に向いています</div>
+      <h2 class="section-h2">「相談先はある。でも、<br>本当にこれでいいのか？」という社長へ。</h2>
+      <p class="section-lead">以下のいずれかのシーンに当てはまるなら、セカンドオピニオンが役立ちます。</p>
+    </div>
+    <div class="scene-grid fade-in">
+      <div class="scene-item">
+        <div class="scene-icon">🏢</div>
+        <div>
+          <div class="scene-label">SCENE 01</div>
+          <div class="scene-title">M&A仲介会社から提案・営業を受けている</div>
+          <p class="scene-body">「ちょうどいいバイヤーがいる」「今が売り時」と言われているが、本当にそうなのかわからない。提案内容が妥当なのか、相談相手が欲しい。</p>
+          <span class="scene-note">→ 提案内容を一緒に検証します。</span>
+        </div>
+      </div>
+      <div class="scene-item">
+        <div class="scene-icon">📊</div>
+        <div>
+          <div class="scene-label">SCENE 02</div>
+          <div class="scene-title">税理士・銀行に相談しているが、全体が見えない</div>
+          <p class="scene-body">税務や融資の話はしてくれるが、「会社の未来全体」や「どの選択肢が最もいいか」という横断的な話ができる相手がいない。物足りなさを感じている。</p>
+          <span class="scene-note">→ 各専門家を補完する全体像の整理を担います</span>
+        </div>
+      </div>
+      <div class="scene-item">
+        <div class="scene-icon">⚖️</div>
+        <div>
+          <div class="scene-label">SCENE 03</div>
+          <div class="scene-title">LOI・基本合意の前に、もう一度確認したい</div>
+          <p class="scene-body">交渉が進んでいるが、最終判断の前にもう一度立ち止まって確認したい。従業員の雇用継続・ブランドの維持・自分の処遇が本当に守られるのか不安がある。</p>
+          <span class="scene-note">→ 最終決断前のチェック役・壁打ち相手になります</span>
+        </div>
+      </div>
+      <div class="scene-item">
+        <div class="scene-icon">🔄</div>
+        <div>
+          <div class="scene-label">SCENE 04</div>
+          <div class="scene-title">売却か承継か、方向性がまだ固まっていない</div>
+          <p class="scene-body">「後継者がいないから売却しかない」と思い込んでいるが、本当にそうなのか。誰かに誘導されるのではなく、フラットに全選択肢を比較したい。</p>
+          <span class="scene-note">→ 選択肢をフラットに比較整理します</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag">気になっていること</div>
+      <h2 class="section-h2">「誰かに聞きたかった」<br>こんな疑問、ありませんか？</h2>
+      <p class="section-lead">相談相手はいる。でもこの問いだけは誰にも聞けなかった——そんな疑問がきっとあるはずです。</p>
+    </div>
+    <div class="pain-list fade-in">
+      <div class="pain-item">
+        <div class="pain-check"></div>
+        <p class="pain-text">仲介会社から面談依頼が来ている。後継者もいないし、ちょっと気になってはいる。でも会ってしまうと、そのままM&Aのプロセスに乗ってしまいそうでためらっている。</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-check"></div>
+        <p class="pain-text">仲介会社から提示された価格が「妥当」・「好条件」なのか「不利」なのか自分には判断できない。でも聞ける人がいない。</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-check"></div>
+        <p class="pain-text">「売却しかない」と思い込んでいるが、本当に他の選択肢はないのか。社員への承継・外部経営者招聘・一部売却・提携など、可能性をフラットに知りたい。</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-check"></div>
+        <p class="pain-text">仲介会社の契約書に何が書いてあるか、何がリスクになりうるか、よくわからないままサインすることになりそうで不安。</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-check"></div>
+        <p class="pain-text">「今すぐ決めましょう」と急かされている気がする。本当に急ぐ必要があるのか、タイミングを冷静に確かめたい。</p>
+      </div>
+      <div class="pain-item">
+        <div class="pain-check"></div>
+        <p class="pain-text">税理士・銀行・仲介会社がそれぞれ「自分の専門」のことしか言わない。会社の未来全体を横断して整理してくれる人がいない。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE: RAISING VALUE BEFORE SELLING -->
+<section class="section section-stone">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag section-tag-gold">価値向上アプローチ</div>
+      <h2 class="section-h2">売却を急ぐ前に、<br>会社の価値を高める手がある。</h2>
+      <p class="section-lead">仲介会社は「今の状態」で売ろうとします。でも少し時間をかけて準備することで、価格と条件を大きく改善できる可能性があります。</p>
+    </div>
+    <div class="approach-grid fade-in">
+      <div>
+        <div class="approach-highlight">
+          <div class="approach-hl-label">INSIGHT</div>
+          <p class="approach-hl-text">「今すぐ売る」か「準備してから動く」か——<br>そのリスクと可能性を知った上で、<br>対処することが重要です。</p>
+        </div>
+      </div>
+      <div class="approach-factors">
+        <div class="approach-factor">
+          <div class="approach-factor-icon">📈</div>
+          <div>
+            <div class="approach-factor-title">財務の磨き上げ</div>
+            <p class="approach-factor-desc">オーナー報酬・交際費などの正常化、借入構造の整理、実態利益の見える化。これだけで評価額が変わるケースは多い。</p>
+          </div>
+        </div>
+        <div class="approach-factor">
+          <div class="approach-factor-icon">🔒</div>
+          <div>
+            <div class="approach-factor-title">属人性リスクの除去</div>
+            <p class="approach-factor-desc">社長依存・特定顧客依存・口頭での取引慣行。買い手が懸念するリスク要因を事前に解消しておく。</p>
+          </div>
+        </div>
+        <div class="approach-factor">
+          <div class="approach-factor-icon">📋</div>
+          <div>
+            <div class="approach-factor-title">契約・知財の整備</div>
+            <p class="approach-factor-desc">顧客・仕入先との書面契約、商標・特許の権利整理。デューデリジェンスで指摘されると価格が下がる要因を先手で対処。</p>
+          </div>
+        </div>
+        <div class="approach-factor">
+          <div class="approach-factor-icon">👥</div>
+          <div>
+            <div class="approach-factor-title">組織・幹部の可視化</div>
+            <p class="approach-factor-desc">社長がいなくても回る体制、幹部の役割の明確化。「社長と一緒に会社が消える」という懸念を払拭する。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--accent-pale);border-left:3px solid var(--accent);padding:16px 20px;border-radius:0 8px 8px 0;font-size:13.5px;color:var(--gray-700);line-height:1.7;" class="fade-in">
+      <strong style="color:var(--accent);">Linkropは「急いで売ること」ではなく「社長にとって最善の状態で動くこと」を目的としています。</strong><br>
+      今すぐ売却する必要があるのか、準備期間を置いた方が有利なのか——これ自体をセカンドオピニオンで整理できます。
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="section">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag section-tag-accent">M&amp;A仲介 vs Linkrop</div>
+      <h2 class="section-h2">「仲介会社に任せる」だけでは<br>拾えない視点があります。</h2>
+      <p class="section-lead">仲介会社を否定するわけではありません。ただ、それぞれの役割と立場は根本的に異なります。</p>
+    </div>
+    <div class="compare-grid fade-in">
+      <div class="compare-card">
+        <div class="compare-head compare-head-bad">❌  M&A仲介会社の構造的な特性</div>
+        <div class="compare-body compare-body-bad">
+          <ul class="compare-list">
+            <li>成約報酬型のため「売ること」がゴール</li>
+            <li>売り手・買い手の双方代理が多く、立場が複雑</li>
+            <li>「売却以外の選択肢」を積極的には提示しない</li>
+            <li>価値向上施策より「今すぐ動くこと」を優先しがち</li>
+            <li>契約書の条項で社長の選択肢が制限される場合も</li>
+          </ul>
+        </div>
+      </div>
+      <div class="compare-card">
+        <div class="compare-head compare-head-good">◎  Linkrop（セカンドオピニオン）の立場</div>
+        <div class="compare-body compare-body-good">
+          <ul class="compare-list">
+            <li>社長の利益だけを考えて動く、完全な社長側アドバイザー</li>
+            <li>選択肢をフラットに比較・整理</li>
+            <li>提示価格・条件・スキームを独立した目線で検証</li>
+            <li>価値向上施策を含む、時間をかけた最善策を提案</li>
+            <li>仲介契約書のビジネス視点からのアドバイスも<br><small style="color:#6d8a78;font-size:11px;">（＊）当サービスは法的助言（リーガルチェック）を行うものではありません。ビジネス判断の支援を目的とするものです</small></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--blue-light);border:1px solid var(--blue-pale);border-radius:10px;padding:20px 24px;font-size:13.5px;color:var(--gray-700);line-height:1.75;" class="fade-in">
+      <strong style="color:var(--navy);display:block;margin-bottom:6px;">重要なのは、社長が「知って納得した上で選んでいる」状態です。</strong>
+      セカンドオピニオンを受けたうえで「やはりこの条件でM&Aを進める」という判断をする社長も多くいるでしょう。そのときの判断の質は、何も知らないまま進む場合と大きく異なります。
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag" style="color:#7aadda;border-color:rgba(122,173,218,0.3);background:rgba(122,173,218,0.1);">Linkropが提供する価値</div>
+      <h2 class="section-h2 section-h2-white">セカンドオピニオンで<br>得られる3つのこと</h2>
+    </div>
+    <div class="pillars-grid fade-in">
+      <div class="pillar-card">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">「知って納得した上で<br>選んでいる」という安心感</div>
+        <p class="pillar-body">提示された価格・条件・スキームが何を意味し、どのリスクがあるかを理解した上で判断できます。「よくわからないまま進んだ」という後悔をなくします。</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">比較から生まれる<br>交渉力と選択肢</div>
+        <p class="pillar-body">他の選択肢を知ること自体が交渉力になります。「他にも選択肢がある」という事実が、条件交渉の余地を生み出します。価値向上の可能性も含め整理します。</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">「自分で選んだ」という<br>納得のある決断</div>
+        <p class="pillar-body">仲介会社のペースで動くのではなく、社長が主体的に選んだ結果として前に進む。その違いが、決断後の満足度と人生の充実度を大きく変えます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag">サービスの流れ</div>
+      <h2 class="section-h2">まず「話を聞いてもらうだけ」<br>で構いません。</h2>
+      <p class="section-lead">資料の準備がなくても、最初の相談は無料・60分です。「今どんな状況か」を話すことから始まります。</p>
+    </div>
+    <div class="fade-in">
+      <!-- SEMINAR BRANCH STEP -->
+      <div style="border:1.5px dashed var(--gold);border-radius:12px;padding:20px 24px;margin-bottom:16px;background:var(--gold-pale);display:grid;grid-template-columns:80px 1fr;align-items:start;gap:0;">
+        <div style="background:#b87d10;color:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:0.05em;gap:4px;padding:16px 8px;border-radius:8px 0 0 8px;">
+          <div style="font-family:'DM Serif Display',serif;font-size:26px;color:rgba(255,255,255,0.8);line-height:1;">0</div>STEP
+        </div>
+        <div style="padding:20px 24px;">
+          <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:3px;margin-bottom:8px;background:rgba(232,168,48,0.2);color:#7a5010;border:1px solid rgba(232,168,48,0.4);">無料セミナー</div>
+          <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;">まず「会社の選択肢」について知りたい方はセミナーへ</div>
+          <p style="font-size:13px;color:var(--gray-500);line-height:1.65;">M&Aや事業承継について相談するほど具体化していないが、選択肢や考え方の全体像を知りたい方のための入門セミナー（60分・無料）です。セミナー参加後にSTEP 1の個別相談に進む方も多くいます。<br><a href="#seminar" style="color:var(--blue);font-weight:700;text-decoration:none;">→ セミナーの詳細を見る</a></p>
+        </div>
+      </div>
+
+      <div style="text-align:center;font-size:12px;color:var(--gray-300);margin-bottom:16px;letter-spacing:0.1em;">▼ 具体的に相談したい方はこちらから</div>
+
+      <div class="step-item">
+        <div class="step-num-col">
+          <div class="step-num-big">1</div>STEP
+        </div>
+        <div class="step-body">
+          <div class="step-badge badge-free">無料・60分</div>
+          <div class="step-title">初回セカンドオピニオン相談</div>
+          <p class="step-desc">現在の状況（相談先・提案の内容・気になっていること）をヒアリングします。資料がなくても構いません。オンライン（Zoom）または対面。まず「話を聞いてもらう」ことから始まります。</p>
+          <div style="margin-top:12px;padding:12px 16px;background:var(--green-pale);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;font-size:13px;color:var(--gray-700);line-height:1.7;">
+            <strong style="color:var(--accent);">この相談は、M&Aプロセスの開始ではありません。</strong><br>
+            会社の選択肢を整理するスタート地点です。何も決める必要はありません。
+          </div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num-col featured">
+          <div class="step-num-big">2</div>STEP
+        </div>
+        <div class="step-body">
+          <div class="step-badge badge-paid">有料・2.5時間 / 5万円</div>
+          <div class="step-title">セカンドオピニオンサービス（対面またはオンライン）</div>
+          <p class="step-desc">初回を踏まえ、提示条件の評価・選択肢の整理・価値向上施策の検討・契約書のレビューなど、面談形式で実施します。資料をご持参いただくとより具体的な整理が可能です。</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num-col">
+          <div class="step-num-big">3</div>STEP
+        </div>
+        <div class="step-body">
+          <div class="step-badge badge-opt">継続サポート</div>
+          <div class="step-title">伴走サポート</div>
+          <p class="step-desc">「このまま進める」「条件を再交渉する」「別の選択肢を探す」「価値を高めてから動く」——どの方向に進むにしても、社長の意思決定を横断的にサポートします。最終合意まで伴走可能。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag">アドバイザー紹介</div>
+      <h2 class="section-h2">「売る側の気持ち」も「金融の論理や実情」も、<br>両方わかる稀有な相談相手</h2>
+    </div>
+    <div class="profile-grid fade-in">
+      <div class="profile-img-wrap">
+        <img src="data:image/jpeg;base64,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" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;border-radius:14px;" alt="黒木 武将">
+        <div class="profile-badge">自ら事業譲渡を経験</div>
+      </div>
+      <div style="padding-top:8px;">
+        <div class="profile-name">黒木 武将</div>
+        <div class="profile-kana">くろき たけゆき / Takeyuki Kuroki</div>
+        <div class="profile-title">株式会社 Linkrop 代表取締役<br>事業承継・M&Aアドバイザー／社外CFO</div>
+
+        <div style="background:var(--blue-light);border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding:16px 20px;margin-bottom:24px;">
+          <p style="font-family:'Noto Serif JP',serif;font-size:14px;color:var(--navy);line-height:1.8;font-style:italic;">
+            「金融の知識と、実際に中小企業の経営の孤独や、事業を譲渡した経験を持つ自分だからこそ、できることがある。」
+          </p>
+          <div style="font-size:12px;color:var(--gray-500);margin-top:8px;">── 黒木 武将</div>
+        </div>
+
+        <div class="exp-list">
+          <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div>
+              <div class="exp-label">金融実務 25年：プロの視点をあなたの隣に</div>
+              <div class="exp-desc">みずほ銀行・メリルリンチ日本証券にて、M&amp;A・資金調達・事業再編の最前線に25年間身を置いてきました。大企業やスタートアップには、単なる営業ではなく、選択肢を相談できるプロが何人もいる。「経営判断の専門的な仕組み」を、中小企業の皆様にも当たり前に届けたい。それが私の原点です。</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div>
+              <div class="exp-label">経営当事者 13年：経営の孤独を肌で知っている</div>
+              <div class="exp-desc">2013年に住宅・リノベーション領域でSUVACO株式会社を起業。資金調達の難航、事業提携の交渉、採用の壁、組織の軋轢——。経営者として、銀行に断られた日も、投資家に頭を下げた夜も経験しました。「社長の孤独」を理解できるのは、同じ道を歩んだからこそです。</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-dot" style="background:#b84c0e;"></div>
+            <div>
+              <div class="exp-label" style="color:#b84c0e;">自ら事業譲渡を経験：「売る側の痛み」を知っている</div>
+              <div class="exp-desc">アドバイザーとしてだけでなく、「売る側」として事業譲渡の当事者経験があります。だからこそ、売却を急かすのではなく、社長の人生と会社の未来を第一に考え、フラットな立場で選択肢を整理することにこだわります。そして「もっと早く整理しておけばよかった」と感じた自らの経験が、このサービスの原点です。</div>
+            </div>
+          </div>
+          <div class="exp-item">
+            <div class="exp-dot" style="background:var(--green);"></div>
+            <div>
+              <div class="exp-label" style="color:var(--green);">なぜ、Linkropなのか</div>
+              <div class="exp-desc">大企業やスタートアップには、判断を支えるプロの助言者が何人もいます。一方、中小企業の社長は、多くの決断をたった一人で迫られています。税理士・銀行・M&amp;A仲介会社はそれぞれの専門領域には答えてくれますが、全体を俯瞰して整理する存在が不足していると感じてきました。「社長が真に相談できる伴走者がいなければならない」。それがLinkropでこのサービスを創った理由です。</div>
+            </div>
+          </div>
+        </div>
+        <div class="cred-row">
+          <span class="cred-tag">シカゴ大学MBA</span>
+          <span class="cred-tag">M&amp;A支援機関登録（中小企業庁）</span>
+          <span class="cred-tag">FP2級（AFP）</span>
+          <span class="cred-tag">宅地建物取引士</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLEDGE / STANCE -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag" style="color:#7aadda;border-color:rgba(122,173,218,0.3);background:rgba(122,173,218,0.1);">Linkropのスタンス</div>
+      <h2 class="section-h2 section-h2-white">社長側に立つ、<br>3つのコミットメント</h2>
+      <p class="section-lead section-lead-white">セカンドオピニオンの価値は、提供者の立場の明確さにかかっています。</p>
+    </div>
+    <div class="pledge-grid fade-in">
+      <div class="pledge-item">
+        <span class="pledge-icon">👤</span>
+        <div class="pledge-title">社長の思いと<br>会社の未来が判断の基準です</div>
+        <p class="pledge-body">Linkropは社長ひとりの立場で動きます。「売却すべきか」「今動くべきか」「価値を高めてから動くべきか」——この判断において、社長の人生と会社の未来だけを優先します。</p>
+      </div>
+      <div class="pledge-item">
+        <span class="pledge-icon">⚖️</span>
+        <div class="pledge-title">結論を押しつけません。<br>社長が選びます</div>
+        <p class="pledge-body">売却・承継・現状維持・価値向上後に動くなど、どの選択肢が最善かは社長ご自身が決めることです。Linkropは情報と視点を整理し、社長が「知って納得した上で選べる」状態をつくることをゴールとします。</p>
+      </div>
+      <div class="pledge-item">
+        <span class="pledge-icon">🔒</span>
+        <div class="pledge-title">相談内容は<br>完全秘密厳守</div>
+        <p class="pledge-body">個別セッションは完全1対1。相談内容を許可なく仲介会社・税理士・銀行など外部に開示することはありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-dark" style="padding-top:0;">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag" style="color:#7aadda;border-color:rgba(122,173,218,0.3);background:rgba(122,173,218,0.1);">よくある質問</div>
+      <h2 class="section-h2 section-h2-white">FAQ</h2>
+    </div>
+    <div class="faq-list fade-in">
+      <details class="faq-item">
+        <summary class="faq-q">
+          <div class="faq-icon">Q</div>
+          <div class="faq-qt">すでにM&A仲介会社から提案を受けています。仲介契約前に相談するのが良いのですか？</div>
+          <div class="faq-arrow">▾</div>
+        </summary>
+        <div class="faq-a">はい、仲介会社と契約する前が最もおすすめのタイミングです。仲介契約には「専属条項」「禁止行為」など、社長の行動を制限する内容が含まれることがあります。契約前であれば、提案の妥当性・他の選択肢・契約書の内容をフリーの状態で整理できます。すでに契約済みの場合も、契約内容の範囲内でのサポートは可能ですのでご相談ください。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <div class="faq-icon">Q</div>
+          <div class="faq-qt">仲介会社や税理士との関係が悪くなりませんか？</div>
+          <div class="faq-arrow">▾</div>
+        </summary>
+        <div class="faq-a">既存の相談相手である仲介会社や税理士の業務を代替するものではなく、関係を壊すものではありません。もし関係が気になるようでしたら、一緒に考えましょう。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <div class="faq-icon">Q</div>
+          <div class="faq-qt">今すぐ売却を決断する必要はありますか？</div>
+          <div class="faq-arrow">▾</div>
+        </summary>
+        <div class="faq-a">まったくありません。むしろ「本当に今すぐ動くべきか、少し準備してから動く方が社長と会社にとって良いか」を整理することがセカンドオピニオンの重要な役割のひとつです。急かされるまま動くより、タイミングと状態を見極めた上で動く方が、社長と会社にとって良い結果につながることが多いです。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <div class="faq-icon">Q</div>
+          <div class="faq-qt">税理士にも相談しています。Linkropとはどう違いますか？</div>
+          <div class="faq-arrow">▾</div>
+        </summary>
+        <div class="faq-a">税理士は税務処理、銀行は融資が専門です。Linkropは「会社の未来全体を横断して整理し、各専門家を効果的に活用するための論点整理」を担います。信頼できる税理士・銀行がいる方こそ、全体をまとめる視点を持つLinkropとの相談が有効に機能します。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <div class="faq-icon">Q</div>
+          <div class="faq-qt">初回相談は本当に無料ですか？何か押しつけられませんか？</div>
+          <div class="faq-arrow">▾</div>
+        </summary>
+        <div class="faq-a">初回相談（60分）は無料です。「今の状況を話して、進めるべきか整理の方向性がつかめた」という状態になることが初回のゴールです。相談後に継続サポートを押しつけることはありません。必要と感じた場合のみ、ご判断ください。</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">
+          <div class="faq-icon">Q</div>
+          <div class="faq-qt">会社の規模・業種・状況を問わず相談できますか？</div>
+          <div class="faq-arrow">▾</div>
+        </summary>
+        <div class="faq-a">中小企業経営者を主な対象としていますが、状況によって柔軟に対応します。業種は問いません。「今の相談状況をフラットに確認してほしい」と感じているなら、まずご相談ください。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- SEMINAR -->
+<section class="seminar-section" id="seminar">
+  <div class="container seminar-inner">
+    <div class="fade-in">
+      <div class="seminar-badge">📅 定期開催セミナー</div>
+      <h2 class="seminar-h2">まず「知る」ことから始めませんか<br>——60分で会社の未来整理セミナー</h2>
+      <p class="seminar-lead">個別相談の前に全体像を知りたい方のための入門セミナーです。後継者問題・会社の価値・将来の選択肢について実体験も交えて解説します。</p>
+    </div>
+    <div class="seminar-card fade-in">
+      <div class="seminar-card-head">
+        <div class="seminar-tag">SEMINAR</div>
+        <div class="seminar-card-title">「後継者がいない社長のための 会社の価値と未来整理」セミナー</div>
+      </div>
+      <div class="seminar-card-body">
+        <div>
+          <div class="seminar-topics-title">▶ 60分で学べること</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">1</div>後継者がいなくても選択肢は5つ以上ある。「廃業」は最後の手段</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">2</div>評価される会社・されない会社の決定的な違い</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">3</div>M&A仲介会社の提案を受ける前に知っておくべきこと</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">4</div>売却前に価値を高める施策とタイミングの考え方</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">5</div>セカンドオピニオンをどう使うか——活用のタイミングと進め方</div>
+          <div style="margin-top:12px;padding:14px 16px;background:var(--blue-light);border:1px solid #c8dce8;border-radius:8px;font-size:12.5px;color:var(--gray-700);line-height:1.7;">
+            <strong style="color:var(--navy);display:block;margin-bottom:4px;">参加後の個別相談も受け付けています</strong>
+            セミナーで全体像を理解した後、「自社に当てはめると？」という個別の疑問や相談にも対応しています。
+          </div>
+        </div>
+        <div>
+          <div class="seminar-topics-title">▶ こんな方に向いています</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">✓</div>M&A仲介会社から提案を受けているが、本当にこれでいいか迷っている</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">✓</div>税理士・銀行に相談しているが、全体を横断して考えてくれる人がいない</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">✓</div>売却ありきで話が進んでいる気がして、立ち止まって確認したい</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">✓</div>後継者がおらず、会社の未来の選択肢を客観的に知りたい</div>
+          <div style="margin-top:16px;padding:14px 16px;background:#f5f8e8;border:1px solid #d0dca0;border-radius:8px;font-size:12.5px;color:var(--gray-700);line-height:1.7;">
+            <strong style="color:var(--navy);display:block;margin-bottom:4px;">🔒 秘密厳守</strong>
+            参加は「財務・経営の勉強会」として対外的に説明可能。個別の相談内容が外部に開示されることはありません。
+          </div>
+        </div>
+      </div>
+      <div class="seminar-cta-row">
+        <div class="seminar-price-info">
+          <div style="margin-bottom:6px;">参加費：<span style="text-decoration:line-through;color:#6a90a8;font-size:13px;">5,500円（税込）</span>&nbsp;→&nbsp;<strong>無料</strong></div>
+          <div style="font-size:12px;color:#b87d10;margin-bottom:8px;">※ まず気軽に知っていただくことが大切だと考え、初回は無料で開催しています</div>
+          <div style="font-size:12px;color:var(--gray-500);">📅 開催日時：2025年7月3日（金）14:00〜15:00<br>📍 場所：オンライン開催（Zoom）<br>ご申込み後にURLをお送りします</div>
+        </div>
+        <a href="https://linkrop.jp/freedom-lab/contact" target="_blank" rel="noopener" class="btn-seminar">セミナーに申し込む →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="container cta-inner">
+    <div class="cta-sub fade-in">次のステップはどちらから</div>
+    <h2 class="cta-h2 fade-in">その決断、「知って納得した上で<br>選んだ」と言えますか？</h2>
+    <p class="cta-lead fade-in">M&Aは人生最大級の意思決定のひとつです。<br>仲介会社のペースではなく、社長自身が主体的に選んだと言える状態で、前に進んでほしい。<br>仲介契約を結ぶ前に、一度Linkropに話してください。</p>
+
+    <div class="cta-cards fade-in" style="grid-template-columns:1fr 1fr;max-width:800px;">
+      <div class="cta-card" style="border:1px solid rgba(232,168,48,0.3);text-align:left;padding:0;overflow:hidden;border-radius:10px;">
+        <div style="background:linear-gradient(135deg,#2a3d1e 0%,#1e3216 100%);padding:14px 20px;display:flex;align-items:center;gap:12px;">
+          <div style="background:rgba(240,192,112,0.2);border:1px solid rgba(240,192,112,0.4);color:#f0c070;font-size:10px;font-weight:700;letter-spacing:0.18em;padding:4px 10px;border-radius:3px;white-space:nowrap;">SEMINAR</div>
+          <div style="font-size:14px;font-weight:700;color:var(--white);">まず知りたい方へ</div>
+        </div>
+        <div style="padding:20px;">
+          <p style="font-size:13px;color:#a8c4dc;line-height:1.75;margin-bottom:16px;">選択肢の全体像を知ってから判断したい方のための入門セミナー。60分・無料。</p>
+          <a href="#seminar" style="display:inline-block;background:transparent;color:#7aadda;border:1px solid rgba(122,173,218,0.4);padding:10px 20px;border-radius:4px;font-size:13px;font-weight:700;text-decoration:none;">セミナーの詳細を見る →</a>
+        </div>
+      </div>
+      <div class="cta-card" style="border:1px solid rgba(26,110,74,0.4);text-align:left;padding:0;overflow:hidden;border-radius:10px;">
+        <div style="background:linear-gradient(135deg,var(--navy) 0%,#1e3a68 100%);padding:14px 20px;display:flex;align-items:center;gap:12px;">
+          <div style="background:rgba(26,110,74,0.25);border:1px solid rgba(26,110,74,0.5);color:#6dbf8a;font-size:10px;font-weight:700;letter-spacing:0.18em;padding:4px 10px;border-radius:3px;white-space:nowrap;">PERSONAL SESSION</div>
+          <div style="font-size:14px;font-weight:700;color:var(--white);">すぐ相談したい方へ</div>
+        </div>
+        <div style="padding:20px;">
+          <p style="font-size:13px;color:#a8c4dc;line-height:1.75;margin-bottom:16px;">今の状況を個別に整理したい方のための1対1相談。60分・無料・秘密厳守。</p>
+          <a href="https://linkrop.jp/freedom-lab/contact" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:var(--white);padding:10px 20px;border-radius:4px;font-size:13px;font-weight:700;text-decoration:none;">無料相談を申し込む →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-buttons fade-in" style="margin-top:32px;">
+      <p class="cta-note">株式会社 Linkrop　｜　Mail: tkuroki@linkrop.jp　｜　Tel: 03-3382-2545</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">Linkrop</div>
+  <div class="footer-links">
+    <a href="https://linkrop.jp" target="_blank" rel="noopener">トップページ</a>
+    <a href="https://linkrop.jp/freedom-lab/contact" target="_blank" rel="noopener">コンサルティング</a>
+    <a href="https://linkrop.jp/freedom-lab" target="_blank" rel="noopener">経営自由度ラボ</a>
+    <a href="https://linkrop.jp" target="_blank" rel="noopener">お問い合わせ</a>
+  </div>
+  <div class="footer-copy">© 株式会社Linkrop 2026　〒164-0001 東京都中野区中野2-19-2 リードシー中野ビル3F</div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => { entry.target.classList.add('visible'); }, 60);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

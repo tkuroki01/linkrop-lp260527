@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会社の価値と未来整理セミナー（無料・60分）| Linkrop</title>
+<meta name="description" content="後継者がいない社長のための入門セミナー。M&Aの選択肢・会社の価値・将来の可能性を60分で整理します。無料・オンライン開催。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:      #1a2e50;
+  --navy-mid:  #243d6b;
+  --blue:      #2c6fad;
+  --blue-mid:  #4585c0;
+  --blue-pale: #ddeaf6;
+  --blue-light:#eef5fb;
+  --accent:    #1a6e4a;
+  --accent-mid:#228559;
+  --accent-pale:#e4f3ec;
+  --white:     #ffffff;
+  --off-white: #f8fafc;
+  --stone:     #f3f1ee;
+  --gray-100:  #e8edf3;
+  --gray-300:  #b0bcc9;
+  --gray-500:  #6d7f92;
+  --gray-700:  #3a4a5c;
+  --gray-900:  #1e2a35;
+  --green:     #1e6b45;
+  --green-pale:#e4f2eb;
+  --gold:      #e8a830;
+  --gold-pale: #fdf4e0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--gray-900);background:var(--white);line-height:1.7;-webkit-font-smoothing:antialiased;}
+.container{max-width:960px;margin:0 auto;padding:0 24px;}
+
+/* FADE */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+/* =====================
+   HEADER / NAV
+===================== */
+.nav{position:sticky;top:0;z-index:200;background:rgba(26,46,80,0.97);backdrop-filter:blur(8px);padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+.nav-inner{max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;}
+.nav-brand{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--white);letter-spacing:0.05em;text-decoration:none;}
+.nav-brand span{color:#7aadda;font-size:11px;font-weight:300;display:block;letter-spacing:0.1em;font-family:'Noto Sans JP',sans-serif;}
+.nav-cta{background:var(--accent);color:var(--white);border:none;border-radius:4px;padding:10px 22px;font-size:13px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;text-decoration:none;transition:background 0.2s;white-space:nowrap;}
+.nav-cta:hover{background:var(--accent-mid);}
+
+/* =====================
+   HERO
+===================== */
+.hero{background:linear-gradient(150deg,var(--navy) 0%,#1e3a68 60%,#213b6a 100%);padding:72px 0 64px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 10% 110%,rgba(232,168,48,0.10) 0%,transparent 65%);}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 90% 10%,rgba(44,111,173,0.15) 0%,transparent 65%);}
+.hero-inner{position:relative;z-index:1;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(232,168,48,0.15);border:1px solid rgba(232,168,48,0.45);padding:6px 16px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:0.14em;color:#f0c070;margin-bottom:28px;}
+.hero-tag{background:rgba(240,192,112,0.2);border:1px solid rgba(240,192,112,0.4);color:#f0c070;font-size:10px;font-weight:700;letter-spacing:0.18em;padding:4px 10px;border-radius:3px;}
+.hero-title{font-family:'Noto Serif JP',serif;font-size:clamp(24px,4vw,42px);font-weight:700;color:var(--white);line-height:1.45;margin-bottom:20px;}
+.hero-title em{font-style:normal;color:#f0c070;}
+.hero-sub{font-size:15px;color:rgba(255,255,255,0.72);line-height:1.9;max-width:560px;margin-bottom:40px;}
+.hero-meta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:36px;}
+.hero-meta-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.85);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);padding:8px 16px;border-radius:6px;}
+.hero-meta-item strong{color:var(--white);}
+.btn-hero{display:inline-block;background:var(--accent);color:var(--white);padding:16px 36px;border-radius:5px;font-size:16px;font-weight:700;text-decoration:none;transition:background 0.2s,transform 0.15s;letter-spacing:0.04em;}
+.btn-hero:hover{background:var(--accent-mid);transform:translateY(-1px);}
+.hero-note{margin-top:14px;font-size:12px;color:rgba(255,255,255,0.45);}
+
+/* =====================
+   STRIP (FACTS BAR)
+===================== */
+.strip{background:var(--gold);padding:0;}
+.strip-inner{display:flex;align-items:stretch;}
+.strip-item{flex:1;padding:18px 24px;text-align:center;border-right:1px solid rgba(255,255,255,0.3);font-size:13px;font-weight:700;color:var(--navy);line-height:1.4;}
+.strip-item:last-child{border-right:none;}
+.strip-item span{display:block;font-size:22px;font-weight:700;font-family:'DM Serif Display',serif;letter-spacing:-0.01em;}
+
+/* =====================
+   FOR WHOM
+===================== */
+.section{padding:80px 0;}
+.section-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:5px 14px;border-radius:20px;border:1px solid rgba(44,111,173,0.3);color:var(--blue);background:rgba(44,111,173,0.07);margin-bottom:20px;}
+.section-h2{font-family:'Noto Serif JP',serif;font-size:clamp(20px,2.8vw,30px);font-weight:700;color:var(--navy);line-height:1.55;margin-bottom:16px;}
+.section-lead{font-size:15px;color:var(--gray-500);line-height:1.85;max-width:600px;margin-bottom:48px;}
+.whom-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.whom-card{background:var(--off-white);border:1px solid var(--gray-100);border-radius:10px;padding:20px 24px;display:flex;gap:14px;align-items:flex-start;}
+.whom-icon{width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:2px;}
+.whom-text{font-size:13.5px;color:var(--gray-700);line-height:1.65;}
+.whom-note{margin-top:32px;padding:16px 20px;background:var(--gold-pale);border:1px solid rgba(232,168,48,0.3);border-radius:8px;font-size:13px;color:var(--gray-700);line-height:1.75;}
+.whom-note strong{color:var(--navy);}
+
+/* =====================
+   SEMINAR CARD
+===================== */
+.seminar-section{background:linear-gradient(160deg,#fdf8f0 0%,#fef9f2 60%,#fff8ed 100%);padding:80px 0;position:relative;overflow:hidden;}
+.seminar-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 80% 20%,rgba(232,168,48,0.08) 0%,transparent 70%);}
+.seminar-inner{position:relative;z-index:1;}
+.seminar-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(232,168,48,0.12);border:1px solid rgba(232,168,48,0.4);padding:6px 16px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:0.12em;color:#b87d10;margin-bottom:20px;}
+.seminar-h2{font-family:'Noto Serif JP',serif;font-size:clamp(20px,2.6vw,28px);font-weight:700;color:var(--navy);line-height:1.55;margin-bottom:12px;}
+.seminar-lead{font-size:15px;color:var(--gray-500);line-height:1.85;max-width:600px;margin-bottom:40px;}
+.seminar-card{background:var(--white);border:1px solid rgba(232,168,48,0.3);border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(232,168,48,0.12);}
+.seminar-card-head{background:linear-gradient(135deg,var(--navy) 0%,#1e3a68 100%);padding:24px 32px;display:flex;align-items:center;gap:16px;}
+.seminar-tag{background:rgba(240,192,112,0.2);border:1px solid rgba(240,192,112,0.4);color:#f0c070;font-size:10px;font-weight:700;letter-spacing:0.18em;padding:5px 12px;border-radius:4px;white-space:nowrap;}
+.seminar-card-title{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--white);line-height:1.5;}
+.seminar-card-body{padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.seminar-topics-title{font-size:12px;font-weight:700;color:var(--navy);letter-spacing:0.08em;margin-bottom:14px;}
+.seminar-topic{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;color:var(--gray-700);line-height:1.6;margin-bottom:12px;}
+.seminar-topic-num{width:22px;height:22px;border-radius:50%;background:var(--navy);color:var(--white);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.seminar-cta-row{padding:24px 32px;border-top:1px solid var(--gray-100);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.seminar-price-info{font-size:14px;color:var(--navy);font-weight:700;}
+.btn-seminar{display:inline-block;background:var(--accent);color:var(--white);padding:15px 36px;border-radius:5px;font-size:16px;font-weight:700;text-decoration:none;transition:background 0.2s,transform 0.15s;white-space:nowrap;letter-spacing:0.03em;}
+.btn-seminar:hover{background:var(--accent-mid);transform:translateY(-1px);}
+
+/* =====================
+   FLOW
+===================== */
+.flow-section{background:var(--navy);padding:80px 0;}
+.flow-section .section-tag{color:#7aadda;border-color:rgba(122,173,218,0.3);background:rgba(122,173,218,0.1);}
+.flow-section .section-h2{color:var(--white);}
+.flow-section .section-lead{color:rgba(255,255,255,0.6);}
+.flow-steps{display:flex;flex-direction:column;gap:0;}
+.flow-step{display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+.flow-step:last-child{border-bottom:none;}
+.flow-num{width:40px;height:40px;border-radius:50%;border:2px solid rgba(240,192,112,0.5);color:#f0c070;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'DM Serif Display',serif;}
+.flow-body{}
+.flow-title{font-size:15px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.flow-desc{font-size:13.5px;color:rgba(255,255,255,0.6);line-height:1.75;}
+.flow-cta{margin-top:48px;text-align:center;}
+
+/* =====================
+   FAQ
+===================== */
+.faq-section{padding:80px 0;background:var(--off-white);}
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:720px;}
+details.faq{background:var(--white);border:1px solid var(--gray-100);border-radius:10px;overflow:hidden;}
+details.faq summary{list-style:none;padding:20px 24px;font-size:14px;font-weight:700;color:var(--navy);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+details.faq summary::-webkit-details-marker{display:none;}
+details.faq summary::after{content:'+';font-size:20px;font-weight:300;color:var(--gray-300);flex-shrink:0;transition:transform 0.2s;}
+details.faq[open] summary::after{transform:rotate(45deg);}
+.faq-body{padding:0 24px 20px;font-size:13.5px;color:var(--gray-700);line-height:1.8;border-top:1px solid var(--gray-100);}
+.faq-body p{padding-top:16px;}
+
+/* =====================
+   FINAL CTA
+===================== */
+.final-cta{background:linear-gradient(135deg,var(--navy) 0%,#1e3a68 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden;}
+.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 110%,rgba(232,168,48,0.1) 0%,transparent 65%);}
+.final-cta-inner{position:relative;z-index:1;}
+.final-cta-sub{font-size:12px;font-weight:700;letter-spacing:0.14em;color:#f0c070;margin-bottom:20px;}
+.final-cta-h2{font-family:'Noto Serif JP',serif;font-size:clamp(22px,3vw,34px);font-weight:700;color:var(--white);line-height:1.5;margin-bottom:16px;}
+.final-cta-lead{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.9;max-width:540px;margin:0 auto 40px;}
+.btn-final{display:inline-block;background:var(--accent);color:var(--white);padding:18px 48px;border-radius:5px;font-size:17px;font-weight:700;text-decoration:none;transition:background 0.2s,transform 0.15s;letter-spacing:0.04em;}
+.btn-final:hover{background:var(--accent-mid);transform:translateY(-1px);}
+.final-note{margin-top:16px;font-size:12px;color:rgba(255,255,255,0.4);}
+.final-contact{margin-top:40px;font-size:13px;color:rgba(255,255,255,0.5);}
+
+/* =====================
+   FOOTER
+===================== */
+.footer{background:var(--gray-900);padding:40px 24px;text-align:center;}
+.footer-brand{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;color:var(--white);margin-bottom:16px;}
+.footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:24px;margin-bottom:20px;}
+.footer-links a{font-size:12px;color:var(--gray-300);text-decoration:none;}
+.footer-links a:hover{color:var(--white);}
+.footer-copy{font-size:11px;color:var(--gray-500);}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media(max-width:768px){
+  .whom-grid{grid-template-columns:1fr;}
+  .seminar-card-body{grid-template-columns:1fr;}
+  .seminar-cta-row{flex-direction:column;align-items:stretch;}
+  .strip-inner{flex-direction:column;}
+  .strip-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.3);padding:14px 16px;}
+  .strip-item:last-child{border-bottom:none;}
+  .hero-meta{flex-direction:column;gap:10px;}
+  .seminar-card-head{flex-direction:column;align-items:flex-start;gap:10px;}
+  .btn-hero,.btn-final,.btn-seminar{display:block;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="https://linkrop.jp" class="nav-brand">Linkrop<span>事業承継セカンドオピニオン</span></a>
+    <a href="https://linkrop.jp/freedom-lab/contact" target="_blank" rel="noopener" class="nav-cta">無料相談を申し込む →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner fade-in">
+    <div class="hero-eyebrow">📅 定期開催 · 無料セミナー</div>
+    <h1 class="hero-title">後継者がいない社長のための<br><em>「会社の価値と未来整理」</em>セミナー</h1>
+    <p class="hero-sub">M&Aや事業承継について「相談するほど具体化していないが、選択肢の全体像を知りたい」——そんな方のための入門セミナーです。60分で、廃業以外の選択肢・会社の価値・動くべきタイミングを整理します。</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">🕑 <strong>60分</strong>（オンライン / Zoom）</div>
+      <div class="hero-meta-item">📅 <strong>2025年7月3日（金）14:00〜15:00</strong></div>
+      <div class="hero-meta-item">💴 参加費：<strong>無料</strong>（通常5,500円）</div>
+    </div>
+    <a href="https://linkrop.jp/freedom-lab/contact" target="_blank" rel="noopener" class="btn-hero">このセミナーに申し込む →</a>
+    <p class="hero-note">※ 申込み後にZoomのURLをお送りします。秘密厳守。</p>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="container">
+    <div class="strip-inner">
+      <div class="strip-item"><span>5+</span>後継者がいなくても選択肢は5つ以上</div>
+      <div class="strip-item"><span>60分</span>全体像を一気に整理</div>
+      <div class="strip-item"><span>無料</span>参加費 0円</div>
+      <div class="strip-item"><span>少人数</span>質問もできる少人数制</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOR WHOM -->
+<section class="section">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag">こんな方に</div>
+      <h2 class="section-h2">こんな疑問を持つ社長のための<br>セミナーです</h2>
+      <p class="section-lead">個別相談を申し込むほど具体化はしていないが、まず「自分の会社にはどんな選択肢があるか」を知りたい方に向けて設計されています。</p>
+    </div>
+    <div class="whom-grid fade-in">
+      <div class="whom-card">
+        <div class="whom-icon">✓</div>
+        <div class="whom-text">M&A仲介会社から提案を受けているが、本当にこれでいいか迷っている</div>
+      </div>
+      <div class="whom-card">
+        <div class="whom-icon">✓</div>
+        <div class="whom-text">税理士・銀行に相談しているが、全体を横断して考えてくれる人がいない</div>
+      </div>
+      <div class="whom-card">
+        <div class="whom-icon">✓</div>
+        <div class="whom-text">売却ありきで話が進んでいる気がして、立ち止まって確認したい</div>
+      </div>
+      <div class="whom-card">
+        <div class="whom-icon">✓</div>
+        <div class="whom-text">後継者がおらず、会社の未来の選択肢を客観的に知りたい</div>
+      </div>
+    </div>
+    <div class="whom-note fade-in">
+      <strong>🔒 秘密厳守</strong><br>
+      参加は「財務・経営の勉強会」として対外的に説明可能。個別の相談内容が外部に開示されることはありません。
+    </div>
+  </div>
+</section>
+
+<!-- SEMINAR CARD -->
+<section class="seminar-section">
+  <div class="container seminar-inner">
+    <div class="fade-in">
+      <div class="seminar-badge">📋 セミナー内容</div>
+      <h2 class="seminar-h2">60分で学べること</h2>
+      <p class="seminar-lead">実体験も交えながら、会社の未来に関わる論点を体系的に解説します。</p>
+    </div>
+    <div class="seminar-card fade-in">
+      <div class="seminar-card-head">
+        <div class="seminar-tag">SEMINAR</div>
+        <div class="seminar-card-title">「後継者がいない社長のための 会社の価値と未来整理」セミナー</div>
+      </div>
+      <div class="seminar-card-body">
+        <div>
+          <div class="seminar-topics-title">▶ 60分で学べること</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">1</div>後継者がいなくても選択肢は5つ以上ある。「廃業」は最後の手段</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">2</div>評価される会社・されない会社の決定的な違い</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">3</div>M&A仲介会社の提案を受ける前に知っておくべきこと</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">4</div>売却前に価値を高める施策とタイミングの考え方</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">5</div>セカンドオピニオンをどう使うか——活用のタイミングと進め方</div>
+          <div style="margin-top:12px;padding:14px 16px;background:var(--blue-light);border:1px solid #c8dce8;border-radius:8px;font-size:12.5px;color:var(--gray-700);line-height:1.7;">
+            <strong style="color:var(--navy);display:block;margin-bottom:4px;">参加後の個別相談も受け付けています</strong>
+            セミナーで全体像を理解した後、「自社に当てはめると？」という個別の疑問や相談にも対応しています。
+          </div>
+        </div>
+        <div>
+          <div class="seminar-topics-title">▶ こんな方に向いています</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">✓</div>M&A仲介会社から提案を受けているが、本当にこれでいいか迷っている</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">✓</div>税理士・銀行に相談しているが、全体を横断して考えてくれる人がいない</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">✓</div>売却ありきで話が進んでいる気がして、立ち止まって確認したい</div>
+          <div class="seminar-topic"><div class="seminar-topic-num">✓</div>後継者がおらず、会社の未来の選択肢を客観的に知りたい</div>
+          <div style="margin-top:16px;padding:14px 16px;background:#f5f8e8;border:1px solid #d0dca0;border-radius:8px;font-size:12.5px;color:var(--gray-700);line-height:1.7;">
+            <strong style="color:var(--navy);display:block;margin-bottom:4px;">🔒 秘密厳守</strong>
+            参加は「財務・経営の勉強会」として対外的に説明可能。個別の相談内容が外部に開示されることはありません。
+          </div>
+        </div>
+      </div>
+      <div class="seminar-cta-row">
+        <div class="seminar-price-info">
+          <div style="margin-bottom:6px;">参加費：<span style="text-decoration:line-through;color:#6a90a8;font-size:13px;">5,500円（税込）</span>&nbsp;→&nbsp;<strong>無料</strong></div>
+          <div style="font-size:12px;color:#b87d10;margin-bottom:8px;">※ まず気軽に知っていただくことが大切だと考え、初回は無料で開催しています</div>
+          <div style="font-size:12px;color:var(--gray-500);">📅 開催日時：2025年7月3日（金）14:00〜15:00<br>📍 場所：オンライン開催（Zoom）<br>ご申込み後にURLをお送りします</div>
+        </div>
+        <a href="https://linkrop.jp/freedom-lab/contact" target="_blank" rel="noopener" class="btn-seminar">セミナーに申し込む →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow-section">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag">参加の流れ</div>
+      <h2 class="section-h2" style="color:var(--white);">申込みから当日まで</h2>
+      <p class="section-lead" style="color:rgba(255,255,255,0.6);">お申込みはフォームから1分で完了します。</p>
+    </div>
+    <div class="flow-steps fade-in">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div class="flow-body">
+          <div class="flow-title">フォームから申込み</div>
+          <div class="flow-desc">下のボタンよりお名前・メールアドレスをご入力ください。所要1分。</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div class="flow-body">
+          <div class="flow-title">ZoomのURLをお送りします</div>
+          <div class="flow-desc">申込み後、24時間以内に参加URLをメールでご案内します。</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div class="flow-body">
+          <div class="flow-title">当日Zoomに参加するだけ</div>
+          <div class="flow-desc">ご自身のペースでご参加ください。カメラ・マイクのON/OFFはどちらでも構いません。</div>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <div class="flow-body">
+          <div class="flow-title">（任意）個別相談へ進む</div>
+          <div class="flow-desc">セミナー後、「自社に当てはめると？」という疑問が出た方は個別相談もご利用いただけます。</div>
+        </div>
+      </div>
+    </div>
+    <div class="flow-cta fade-in">
+      <a href="https://linkrop.jp/freedom-lab/contact" target="_blank" rel="noopener" class="btn-hero">無料で申し込む →</a>
+      <p class="hero-note" style="color:rgba(255,255,255,0.35);margin-top:12px;">申込み・参加は完全無料。いつでもキャンセルできます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-tag">よくある質問</div>
+      <h2 class="section-h2">参加前のご不安を解消します</h2>
+    </div>
+    <div class="faq-list fade-in">
+      <details class="faq">
+        <summary>参加費は本当に無料ですか？</summary>
+        <div class="faq-body"><p>はい、完全無料です。通常5,500円（税込）のところ、「まず知っていただくことが大切」という考えから初回は無料で開催しています。勧誘などは一切ありません。</p></div>
+      </details>
+      <details class="faq">
+        <summary>まだ具体的に動くつもりはありませんが、参加できますか？</summary>
+        <div class="faq-body"><p>むしろそのような段階の方こそ最適です。「相談するほど具体化していないが、選択肢を知っておきたい」という方のためのセミナーです。</p></div>
+      </details>
+      <details class="faq">
+        <summary>参加していることが外部に知られますか？</summary>
+        <div class="faq-body"><p>秘密厳守です。「財務・経営の勉強会」として対外的に説明できる設計です。個別の相談内容が外部に開示されることはありません。</p></div>
+      </details>
+      <details class="faq">
+        <summary>セミナー後に営業されますか？</summary>
+        <div class="faq-body"><p>しつこい営業・勧誘は行いません。セミナー後に個別相談を希望される場合は別途ご案内しますが、強制ではありません。</p></div>
+      </details>
+      <details class="faq">
+        <summary>質問はできますか？</summary>
+        <div class="faq-body"><p>はい、少人数制のため質疑応答の時間を設けています。セミナー中にチャットでご質問いただくことも可能です。</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container final-cta-inner fade-in">
+    <div class="final-cta-sub">📅 2025年7月3日（金）14:00〜 ／ 無料・オンライン</div>
+    <h2 class="final-cta-h2">「知って納得した上で選んだ」<br>と言える状態をつくりませんか</h2>
+    <p class="final-cta-lead">M&Aは人生最大級の意思決定のひとつです。仲介会社のペースではなく、社長自身が主体的に選んだと言える状態で前に進んでほしい。まず60分、選択肢の全体像を知るところから始めましょう。</p>
+    <a href="https://linkrop.jp/freedom-lab/contact" target="_blank" rel="noopener" class="btn-final">無料セミナーに申し込む →</a>
+    <p class="final-note">参加費無料 · オンライン開催 · 秘密厳守</p>
+    <p class="final-contact">お問い合わせ：株式会社 Linkrop　｜　Mail: tkuroki@linkrop.jp　｜　Tel: 03-3382-2545</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">Linkrop</div>
+  <div class="footer-links">
+    <a href="https://linkrop.jp" target="_blank" rel="noopener">トップページ</a>
+    <a href="https://linkrop.jp/freedom-lab/contact" target="_blank" rel="noopener">セカンドオピニオン相談</a>
+    <a href="https://linkrop.jp/freedom-lab" target="_blank" rel="noopener">経営自由度ラボ</a>
+  </div>
+  <div class="footer-copy">© 株式会社Linkrop 2026　〒164-0001 東京都中野区中野2-19-2 リードシー中野ビル3F</div>
+</footer>
+
+<script>
+// フェードインアニメーション
+const observer = new IntersectionObserver(
+  entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: 0.12 }
+);
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
